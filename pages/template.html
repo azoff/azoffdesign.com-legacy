@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{{ title }}</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{{ keywords }}" />
+
+{% if isCompiled  %}
+<link rel="stylesheet" type="text/css" href="/minify/{{ style }}" media="all" />
+{% else %} {% for file in styles %}
+<link rel="stylesheet" type="text/css" href="/static/css/{{ file }}" media="all" />
+{% endfor %} {% endif %}
+
+</head>
+
+<body>
+{{ source }}
+
+{% if isCompiled  %}
+<script src="/minify/{{ script }}"></script>
+{% else %} {% for file in scripts %}
+<script src="/static/js/{{ file }}"></script>
+{% endfor %} {% endif %}
+</body>
+
+</html>
