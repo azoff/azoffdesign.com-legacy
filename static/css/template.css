@@ -1,0 +1,31 @@
+.hidden { display: none; }
+
+.widgit { position: fixed; z-index: 97; }
+.widgit.open { z-index: 99; } 
+.widgit_tab { cursor: pointer; padding: 0.2em; }
+.widgit_button { padding: 0.3em 0.5em 0.4em; font-weight: normal; }
+.widgit_content { padding: 1em; }
+
+#overlay { position: fixed; z-index: 98; }
+
+#comments {  left: -2px; top: 0; }
+#comments .widgit_tab {  float: left; padding-left: 0; border-left: 0 none; margin: 1em 0 0 -1px; }
+#comments .widgit_content { float: left; width: 18em; margin-left: -20em; }
+#comments.open .widgit_content { margin-left: 0em; }
+
+#navigation {  right: 1em; top: -2px; }
+#navigation .widgit_tab { float: right; clear: both; padding-top: 0; border-top: 0 none; margin: -1px 1em 0 0; }
+#navigation .widgit_content { float: right; margin-top: -3em; }
+#navigation .widgit_content li { float: left; padding-left: 1em; }
+#navigation .widgit_content li:first-child { padding-left: 0; }
+#navigation .widgit_content a { text-decoration: none; padding: 0 0.2em; }
+#navigation .widgit_content a:hover { color: #666; }
+#navigation.open .widgit_content { margin-top: 0em; }
+
+#copyright {  bottom: -2px; width: 100%; margin-bottom: -5.3em; }
+#copyright.open { margin-bottom: 0em; }
+#copyright .widgit_tab { padding-bottom: 0; border-bottom: 0 none; margin: 0 auto -1px auto; width: 30em; text-align: center; }
+#copyright .widgit_content { margin: 0 2em 0 2em; height: 2.8em; background: #FFF url('../img/appengine-bg.jpg') no-repeat scroll top right; min-width: 62em; }
+#copyright .widgit_content small { font-size: 0.9em; line-height: 1.7em; float: left; width: 80%; height: 3.4em; position: relative; top: -0em; }
+#copyright .widgit_content a { font-weight: bold; text-decoration: none; }
+#copyright .widgit_content a:hover { color: #555; }

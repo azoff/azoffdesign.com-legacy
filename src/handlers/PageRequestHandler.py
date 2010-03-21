@@ -12,4 +12,10 @@ class PageRequestHandler(webapp.RequestHandler):
 
   def get(self, url):
 
-	self.response.out.write(template.render(TEMPLATE_PATH, PageModel.get(url)))
+	model = PageModel.get(url)
+	
+	if not model["isCompiled"]:
+		
+		model["source"] = open(model["path"]).read()
+
+	self.response.out.write(template.render(TEMPLATE_PATH, model))

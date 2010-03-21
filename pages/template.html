@@ -5,25 +5,72 @@
 <title>{{ title }}</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <meta name="keywords" content="{{ keywords }}" />
+<meta name="description" content="{{ description }}" />
+
+<link type="image/x-icon" rel="shortcut icon" href="/static/misc/favicon.ico" />
+<link rel="apple-touch-icon" href="/static/misc/apple-favicon.png">
 
 {% if isCompiled  %}
-<link rel="stylesheet" type="text/css" href="/minify/{{ style }}" media="all" />
-{% else %} {% for file in styles %}
-<link rel="stylesheet" type="text/css" href="/static/css/{{ file }}" media="all" />
+<link rel="stylesheet" type="text/css" href="/minify/{{ styles }}" media="all" />
+{% else %} {% for style in styles %}
+<link rel="stylesheet" type="text/css" href="/static/css/{{ style }}" media="all" />
 {% endfor %} {% endif %}
 
 </head>
 
 <body>
+	
 {{ source }}
 
+<div id="copyright" class="ui-priority-secondary widgit ui-helper-clearfix">
+	<div class="ui-widget ui-widget-content ui-corner-top widgit_tab">
+		<div class="ui-widget-header ui-corner-top font-playtime-toddies widgit_button">
+			Copyright © {{ year }} Jonathan Azoff / Azoff Design / All rights reserved
+		</div>
+	</div>
+	<div class="font-geneva ui-widget ui-widget-content ui-corner-top ui-helper-clearfix widgit_content">
+		<small>
+			Welcome to AzoffDesign.com, the brain-child and portfolio of <a href="/about">Jonathan Azoff</a>. 
+			This site is powered by Google ® App Engine ™ and runs <a href="http://adequatelygood.com">adequately good</a>
+			on browsers that support standards and modern web technologies.
+		</small>
+	</div>
+</div>
+
+<div id="navigation" class="ui-priority-secondary widgit ui-helper-clearfix">
+	<ul class="font-geneva ui-widget ui-widget-content ui-corner-bottom ui-helper-clearfix widgit_content">
+		<li><a href="/">projects</a></li>
+		<li><a href="/resume">resumé</a></li>
+		<li><a href="/about">about</a></li>
+		<li><a href="/contact">contact</a></li>
+	</ul>
+	<div class="ui-widget ui-widget-content ui-corner-bottom widgit_tab">
+		<div class="ui-widget-header ui-corner-bottom font-playtime-toddies widgit_button">navigation</div>
+	</div>
+</div>
+
+<div id="comments" class="ui-priority-secondary widgit">
+	<div id="disqus_thread" class="ui-widget ui-widget-content ui-corner-br widgit_content"></div>
+	<div class="ui-widget ui-widget-content ui-corner-right widgit_tab">
+		<div class="ui-widget-header ui-corner-right font-playtime-toddies widgit_button">comments</div>
+	</div>
+</div>
+
+<div id="overlay" class="ui-widget-overlay hidden"></div>
+
 {% if isCompiled  %}
-<script src="/minify/{{ script }}"></script>
-{% else %} {% for file in scripts %}
-<script src="/static/js/{{ file }}"></script>
+<script src="/minify/{{ scripts }}"></script>
+{% else %} 
+<script src="/static/js/debug.js"></script>
+{% for script in scripts %}
+<script src="/static/js/{{ script }}"></script>
 {% endfor %} {% endif %}
+
+<script src="http://azoff.disqus.com/embed.js"></script>
+
 </body>
 
 </html>

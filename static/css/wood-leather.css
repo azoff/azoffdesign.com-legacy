@@ -1,0 +1,4 @@
+body { background: transparent url('../img/leather-bg.jpg') repeat scroll top left; }
+.content { background: transparent url('../img/wood-bg.jpg') repeat-x scroll center center; min-height: 347px; margin-top: 5em; min-width: 72em; }
+.content h1 { font-size: 14em; padding-top: 0.1em; }
+.content h2 { font-size: 3.5em; }

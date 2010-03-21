@@ -1,0 +1,50 @@
+@font-face {
+	font-family: 'BleedingCowboysRegular';
+	src: url('../misc/BleedingCowboys.eot');
+	src: local('Bleeding Cowboys'), 
+		 local('BleedingCowboys'), 
+		 url('../misc/BleedingCowboys.woff') format('woff'), 
+		 url('../misc/BleedingCowboys.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'CanarsieSlabJLRegular';
+	src: url('../misc/CanarsieSlab.eot');
+	src: local('Canarsie Slab JL'), 
+		 local('CanarsieSlabJL'), 
+		 url('../misc/CanarsieSlab.woff') format('woff'), 
+		 url('../misc/CanarsieSlab.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GenevaPlain';
+	src: url('../misc/Geneva.eot');
+	src: local('Geneva'), 
+		 local('GenevaPlain'), 
+		 url('../misc/Geneva.woff') format('woff'), 
+		 url('../misc/Geneva.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'PlaytimeWithHotToddiesRegular';
+	src: url('PlaytimeWithHotToddies.eot');
+	src: local('Playtime With Hot Toddies'), 
+		 local('PlaytimeWithHotToddies'), 
+		 url('../misc/PlaytimeWithHotToddies.woff') format('woff'),
+		 url('../misc/PlaytimeWithHotToddies.ttf') format('truetype');
+}
+
+
+.font-ludica { font-family: "Ludica Sans"; }
+.font-geneva { font-family: "GenevaPlain"; }
+.font-bleeding-cowboys { font-family: "BleedingCowboysRegular"; }
+.font-canarsie-slab { font-family: "CanarsieSlabJLRegular"; }
+.font-playtime-toddies { font-family: "PlaytimeWithHotToddiesRegular"; }
+
+.color-white { color: #FFF; }
+.color-off-white { color: #EEE; }
+.color-light-gray { color: #666; }
+.color-dark-gray { color: #333; }
+.color-black { color: #000; }
+
+.text-align-center { text-align: center; }
