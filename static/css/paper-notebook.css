@@ -1,0 +1,34 @@
+body { background: transparent url('../img/notebook-bg.jpg') repeat scroll top left; }
+#work { float: left; background: transparent url('../img/grid-bg.jpg') repeat-y scroll center center; width: 540px; padding: 1em 30px; min-height: 100%; }
+#work h1 { font-size: 5em; padding: 0.5em 0 0.2em }
+#work small, #resume small { font-size: 1.5em; line-height: 1.2em; font-weight: bold; padding-bottom: 1em; display: block; }
+#work .selected { float: left; width: 73%; }
+#work .selected li { display: none; }
+#work .selected li.active { display: block; }
+#work .selected h2 { font-size: 3em; font-weight: bold; color: red; position: relative; }
+#work .selected .sub { float: left; margin: 0 0.6em 0 0; font-size: 1.3em; position: relative; color: blue; }
+#work .selected .logo { width: 100px; height: 100px; background: transparent url('../img/work-logos.png') no-repeat scroll 100px 0; position: relative; margin: 0 0 -100px 18em; opacity: .30;filter:Alpha(Opacity=30); }
+#work .playdom .logo { background-position: 0 0; }
+#work .pixelpipe .logo { background-position: -100px 0; }
+#work .campus-kiwi .logo { background-position: -200px 0; }
+#work .xillent .logo { background-position: -300px 0; }
+#work .astreya .logo { background-position: -400px 0; }
+#work .scu .logo { background-position: -500px 0; }
+#work .genie .logo { background-position: -600px 0; }
+#work .azoff .logo { background-position: -700px 0; }
+#work .selected p { padding: 0 1em 1em 0; font-size: 1.4em; line-height: 1.2em; text-indent: 2em; display: block; position: relative; }
+#work .tabs { position: relative; float: right; width: 27%; margin-top: 3em; }
+#work .tabs li { padding-left: 40px; cursor: pointer; line-height: 20px; padding-bottom: 10px; font-size: 1.5em; background: transparent url('../img/thumbtack.png') no-repeat scroll 0 -60px; color: #333; }
+#work .tabs li:hover { background-position: 0 -30px; color: blue; }
+#work .tabs li.active { color: red; background-position: 0 0; cursor: default; }
+#work .tabs li.active:hover { color: red; background-position: 0 0; }
+#resume { width: 401px; margin: 0 0 0 4em; float: left; padding: 8em 2em 2em; background: transparent url('../img/notepad-bg.png') repeat-x scroll top left; }
+#resume h1 { font-size: 2.5em; padding-bottom: 0.2em }
+#resume small a { text-decoration: none; }
+#resume small a:hover { text-decoration: underline; }
+#resume .files li { float: left; }
+#resume .files a { width: 128px; height: 128px; padding-bottom: 0.5em; margin-left: 5px; display: block; cursor: pointer; background: transparent none no-repeat scroll top left; border-bottom: solid 5px transparent; }
+#resume .files a:hover { border-color: #000; }
+#resume .files a.rtf { background-image: url('../img/rtf.png'); }
+#resume .files a.pdf { background-image: url('../img/pdf.png'); }
+#resume .files a.doc { background-image: url('../img/doc.png'); }

@@ -6,6 +6,12 @@
 	translucentClass = "ui-priority-secondary",
 	openClass = "open";
 	
+	w.log = function() {
+		if (console && debug) {
+			return console.log.apply(console, Array.prototype.slice.call(arguments));
+		}
+	};
+	
 	$(function(){
 
 		// get the overlay
@@ -16,14 +22,19 @@
 
 		// set up disqus counter
 		loadDisqusCounter();
+		
+		// bind handlers for any buttons
+		$("button").mouseover(function(){
+			$(this).addClass("ui-state-hover");
+		}).mouseout(function(){
+			$(this).removeClass("ui-state-hover");
+		}).mousedown(function(){
+			$(this).addClass("ui-state-active");
+		}).mouseup(function(){
+			$(this).removeClass("ui-state-active");
+		});
 
 	});
-	
-	w.log = function() {
-		if (console && debug) {
-			return console.log.apply(console, Array.prototype.slice.call(arguments));
-		}
-	}
 	
 	function onTabOver(tab, widgit) {
 		
@@ -41,7 +52,7 @@
 	
 		}
 			
-	}
+	};
 	
 	function onTabOut(tab, widgit) {
 		
@@ -61,7 +72,7 @@
 	
 		}
 			
-	}
+	};
 	
 	function onTabClick(tab, button, widgit) {
 
@@ -83,7 +94,7 @@
 		
 		widgit.data(openClass, !widgit.data(openClass));
 		
-	}
+	};
 	
 	function loadDisqusCounter(links, query, i) {
 		
@@ -99,6 +110,6 @@
 		
 		$("body").append("<script src='http://disqus.com/forums/azoff/get_num_replies.js" + query + "'></script>");
 		
-	}
+	};
 	
 })(window);

@@ -7,6 +7,10 @@ handlers:
 - url: /static/(js|img|css|misc)/(.*)
   static_files: static/\1/\2
   upload: static/.*
+  
+- url: /resume/(doc|rtf|pdf)
+  static_files: static/misc/resume.\1
+  upload: static/.*
     
 - url: .*
   script: src/main.py

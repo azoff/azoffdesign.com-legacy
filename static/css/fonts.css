@@ -34,7 +34,27 @@
 		 url('../misc/PlaytimeWithHotToddies.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'SFGrungeSansShadowRegular';
+	src: url('../misc/SF_Grunge_Sans_Shadow.eot');
+	src: local('SF Grunge Sans Shadow'), 
+		 local('SFGrungeSansShadow'), 
+		 url('../misc/SF_Grunge_Sans_Shadow.woff') format('woff'), 
+		 url('../misc/SF_Grunge_Sans_Shadow.ttf') format('truetype');
+}
 
+@font-face {
+	font-family: 'SFGrungeSansRegular';
+	src: url('../misc/SF_Grunge_Sans.eot');
+	src: local('SF Grunge Sans'), 
+		 local('SFGrungeSans'), 
+		 url('../misc/SF_Grunge_Sans.woff') format('woff'), 
+		 url('../misc/SF_Grunge_Sans.ttf') format('truetype');
+}
+
+
+.font-sfgrunge-shadow { font-family: "SFGrungeSansShadowRegular"; }
+.font-sfgrunge-sans { font-family: "SFGrungeSansRegular"; }
 .font-ludica { font-family: "Ludica Sans"; }
 .font-geneva { font-family: "GenevaPlain"; }
 .font-bleeding-cowboys { font-family: "BleedingCowboysRegular"; }

@@ -1,0 +1,27 @@
+<form class="content" action="/contact" method="GET">
+	
+	<h1 class="font-canarsie-slab">Get in touch.</h1>
+	
+	<div class="section">
+		<label for="sender">Whats your email address?</label>
+		<input id="sender" name="sender" type="text" class="ui-corner-all" value="" />
+	</div>
+	
+	<div class="section">
+		<label for="body">What would you like to say?</label>
+		<textarea id="body" name="body" class="ui-corner-all"></textarea>
+	</div>
+	
+	<div class="section">
+		<label for="recaptcha_challenge_field">Are you human?</label>
+		
+		<script type="text/javascript" 
+			src="http://api.recaptcha.net/challenge?k=6Ldc9QsAAAAAAB0wRNKumWmTMeb-vhqfeRHcc0yO">
+		</script>
+	</div>
+	
+	<div class="section">
+		<button class="ui-state-default ui-corner-all" type="submit">Send Message</button>
+	</div>
+	
+</form>

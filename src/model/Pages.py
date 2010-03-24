@@ -2,14 +2,16 @@ from ConfigParser import ConfigParser
 from os import path
 from datetime import datetime
 
+from src.model import Defaults
+
 ROOT = path.dirname(path.dirname(path.dirname(__file__)))
 PAGES = path.join(ROOT, "pages.ini")
 
-TITLE 			= "Azoff Design"
-DESCRIPTION		= "AzoffDesign.com is the brain-child and design portfolio of Jonathan Azoff"
-KEYWORDS		= "Azoff Design"
-STYLES			= "reset.css,jquery-ui-1.8rc3.custom.css,fonts.css,template.css"
-SCRIPTS			= "jquery-1.4.2.js,jquery-ui-1.8rc3.custom.js,debug.js,template.js"
+TITLE 			= Defaults.TITLE
+DESCRIPTION		= Defaults.DESCRIPTION
+KEYWORDS		= Defaults.KEYWORDS
+STYLES			= Defaults.STYLES
+SCRIPTS			= Defaults.SCRIPTS
 
 _map = {}
 
@@ -51,7 +53,7 @@ for page in _parser.sections():
 					alias = alias.strip().lower()
 					_map[alias] = model
 
-def get(url):
+def getPage(url):
 	url = url.strip().lower() if url else ""
 	
 	if len(url) > 0:
