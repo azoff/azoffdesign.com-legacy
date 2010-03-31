@@ -52,7 +52,17 @@
 		 url('../misc/SF_Grunge_Sans.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'EagerNaturalistRegular';
+	src: url('eagernaturalist.eot');
+	src: local('Eager Naturalist'), 
+		 local('EagerNaturalist'), 
+		 url('eagernaturalist.woff') format('woff'), 
+		 url('eagernaturalist.ttf') format('truetype');
+}
 
+.font-arial-sans { font-family: Arial, Sans; }
+.font-eager-naturalist { font-family: "EagerNaturalistRegular"; }
 .font-sfgrunge-shadow { font-family: "SFGrungeSansShadowRegular"; }
 .font-sfgrunge-sans { font-family: "SFGrungeSansRegular"; }
 .font-ludica { font-family: "Ludica Sans"; }

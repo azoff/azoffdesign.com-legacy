@@ -44,7 +44,7 @@ class ContactFormHandler:
 						return StatusMessage(
 							StatusMessage.CODE_INTERNAL_SERVER_ERROR,
 							"Validation Failed!", 
-							"It seems that the response you provided for the 'are you human' response was incorrect. Please review your submission and try again")
+							"It seems that the response you provided for the 'are you human' prompt was incorrect. Please review your submission and try again")
 					
 				else:
 					

@@ -21,72 +21,58 @@
 	<integer>249</integer>
 	<key>metaData</key>
 	<dict>
-		<key>pages/about.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>30</integer>
-				<key>line</key>
-				<integer>29</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>pages/resume.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>3</integer>
+				<integer>52</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>179</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>137</integer>
+		</dict>
+		<key>static/css/fonts.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>70</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>11</integer>
+			<integer>33</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>27</integer>
-				<key>line</key>
 				<integer>19</integer>
+				<key>line</key>
+				<integer>70</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
-				<integer>3</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>70</integer>
 			</dict>
-		</dict>
-		<key>static/css/canvasblack-metalstep.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>134</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
 		</dict>
 		<key>static/css/paper-notebook.css</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>175</integer>
+				<integer>89</integer>
 				<key>line</key>
-				<integer>9</integer>
+				<integer>34</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -98,7 +84,7 @@
 	<array>
 		<string>static/css/paper-notebook.css</string>
 		<string>pages/resume.html</string>
-		<string>static/css/canvasblack-metalstep.css</string>
+		<string>static/css/fonts.css</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
