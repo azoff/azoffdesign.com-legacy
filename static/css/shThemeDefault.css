@@ -35,7 +35,7 @@
 
 .syntaxhighlighter
 {
-	background-color: #fff !important;
+	background-color: transparent !important;
 }
 
 /* Highlighed line number */
@@ -48,7 +48,7 @@
 .syntaxhighlighter .line.highlighted.alt1,
 .syntaxhighlighter .line.highlighted.alt2
 {
-	background-color: #e0e0e0 !important;
+	background-color: transparent !important;
 }
 
 /* Gutter line numbers */
@@ -71,7 +71,7 @@
 /* First line */
 .syntaxhighlighter .line.alt1
 {
-	background-color: #fff !important;
+	background-color: transparent !important;
 }
 
 /* Second line */
@@ -82,8 +82,14 @@
 
 .syntaxhighlighter .toolbar
 {
+	opacity: .50; filter:Alpha(Opacity=50);
 	background-color: #F8F8F8 !important;
 	border: #E7E5DC solid 1px !important;
+}
+
+.syntaxhighlighter .toolbar:hover
+{ 
+	opacity: 1; filter:Alpha(Opacity=100);
 }
 
 .syntaxhighlighter .toolbar a

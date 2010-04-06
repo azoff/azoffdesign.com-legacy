@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>static/js/overscroll.js</string>
+	<string>pages/overscroll.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,9 +26,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>29</integer>
+				<integer>453</integer>
 				<key>line</key>
-				<integer>45</integer>
+				<integer>43</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -40,9 +40,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>11</integer>
+				<integer>29</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -76,6 +76,50 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+		</dict>
+		<key>static/css/shCore.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>17</integer>
+				<key>line</key>
+				<integer>52</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>26</integer>
+		</dict>
+		<key>static/css/shThemeDefault.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>23</integer>
+				<key>line</key>
+				<integer>85</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>82</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>20</integer>
+				<key>line</key>
+				<integer>85</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>26</integer>
+				<key>line</key>
+				<integer>85</integer>
+			</dict>
 		</dict>
 		<key>static/css/template.css</key>
 		<dict>
@@ -112,23 +156,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>81</integer>
+				<integer>36</integer>
 				<key>line</key>
-				<integer>178</integer>
+				<integer>114</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>93</integer>
+			<integer>10</integer>
 		</dict>
 		<key>static/js/overscroll.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>22</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -141,6 +185,8 @@
 		<string>pages.ini</string>
 		<string>pages/overscroll.html</string>
 		<string>static/css/overscroll-apple.css</string>
+		<string>static/css/shThemeDefault.css</string>
+		<string>static/css/shCore.css</string>
 		<string>static/js/overscroll.js</string>
 		<string>static/js/jquery.overscroll.js</string>
 		<string>static/css/template.css</string>
@@ -214,6 +260,13 @@
 							<key>subItems</key>
 							<dict/>
 						</dict>
+						<key>img</key>
+						<dict>
+							<key>isExpanded</key>
+							<true/>
+							<key>subItems</key>
+							<dict/>
+						</dict>
 						<key>js</key>
 						<dict>
 							<key>isExpanded</key>
@@ -227,6 +280,6 @@
 		</dict>
 	</dict>
 	<key>windowFrame</key>
-	<string>{{92, 0}, {1098, 878}}</string>
+	<string>{{92, 22}, {1264, 856}}</string>
 </dict>
 </plist>
