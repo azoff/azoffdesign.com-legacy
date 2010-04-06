@@ -28,7 +28,6 @@ for page in _parser.sections():
 		page 				= page.strip().lower() if page else ""
 		model 				= {}
 		model["path"]		= path.join(path.join(ROOT, "pages"), _parser.get(page, "source"))
-		model["source"]		= open(model["path"]).read()
 		model["title"] 		= ("%s | %s" % (TITLE, _parser.get(page, "title"))) if _keyExists(page, "title") else TITLE
 		model["keywords"] 	= ("%s,%s" % (KEYWORDS, _parser.get(page, "keywords"))) if _keyExists(page, "keywords") else KEYWORDS
 		model["scripts"] 	= ("%s,%s" % (SCRIPTS, _parser.get(page, "scripts").replace(" ", ""))) if _keyExists(page, "scripts") else SCRIPTS

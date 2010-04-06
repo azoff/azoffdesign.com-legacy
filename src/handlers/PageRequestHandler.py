@@ -14,9 +14,9 @@ class PageRequestHandler(webapp.RequestHandler):
 
 	model = Pages.getPage(url)
 	
-	if not model["isCompiled"]:
+	if (not model["isCompiled"]) or ("source" not in model):
 		
-		model["source"] = open(model["path"]).read()
+		model["source"] = template.render(model["path"], model)
 
 	self.response.out.write(template.render(TEMPLATE_PATH, model))
 	
