@@ -1,0 +1,29 @@
+<div id="content">
+	<div id="wrapper">
+		<div id="title">
+			<h1 class="font-times-roman"><strong>Water</strong>mark</h1>
+			<h2 class="font-geneva">{{ description }}</h2>
+		</div>
+		<form id="example" action="#uhh" method="GET">
+			<div class="tryme font-geneva">Try Me!</div>
+			<input type="text" name="a" title="Click here to type..." class="ui-corner-all" />
+			<textarea name="b" class="ui-corner-all"></textarea>
+		</form>
+		<div id="source" class="font-geneva ui-corner-all">
+			<img alt="Download" src="/static/img/package-closed.png" />
+			<h3>Add Watermark to your project.</h3>
+			<span>If you would like to use the Watermark plug-in, then download the source code 
+			(<a href="">zip</a> | <a href="">tar</a>) or pull 
+			the source directly from the <a href="">plug-in repository</a>. The code below should get you started, 
+			but if you are looking for more control, see the uncompressed source for full API documentation.</span>
+			<h4>1. Include the script, and create some elements to apply watermark to.</h4>
+			<pre class="brush:xml">&lt;script src="jquery.js">&lt;/script>
+&lt;script src="jquery.watermark.js">&lt;/script>
+&lt;input type="text" name="a" title="Click here to type..." />
+&lt;textarea name="b">&lt;/textarea></pre>
+			<h4>2. Apply watermark to those elements; you can also define custom colors!</h4>
+			<pre class="brush:js">$("input").watermark(); // title attr. + gray watermark (default)
+$("textarea").watermark({color: "#87c8ff", text: "Reduce clutter..."}); // custom color + text</pre>
+		</div>
+	</div>
+</div>

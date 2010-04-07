@@ -61,11 +61,11 @@
 		 url('eagernaturalist.ttf') format('truetype');
 }
 
+.font-times-roman { font-family: "Times New Roman", Courier, Garamond, serif; }
 .font-arial-sans { font-family: Arial, Sans; }
 .font-eager-naturalist { font-family: "EagerNaturalistRegular"; }
 .font-sfgrunge-shadow { font-family: "SFGrungeSansShadowRegular"; }
 .font-sfgrunge-sans { font-family: "SFGrungeSansRegular"; }
-.font-ludica { font-family: "Ludica Sans"; }
 .font-geneva { font-family: "GenevaPlain"; }
 .font-bleeding-cowboys { font-family: "BleedingCowboysRegular"; }
 .font-canarsie-slab { font-family: "CanarsieSlabJLRegular"; }
