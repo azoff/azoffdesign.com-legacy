@@ -1,7 +1,7 @@
 body { background: transparent url('../img/notebook-bg.jpg') repeat scroll top left; min-width: 68em; }
 #work { float: left; background: transparent url('../img/grid-bg.jpg') repeat-y scroll center center; width: 540px; padding: 1em 30px; min-height: 100%; }
 #work h1 { font-size: 5em; padding: 0.5em 0 0.2em }
-#work small, #resume small { font-size: 1.5em; line-height: 1.2em; font-weight: bold; padding-bottom: 1em; display: block; }
+#work small, #resume small { font-size: 1.7em; line-height: 1.2em; color: #111; padding-bottom: 1em; display: block; }
 #work .selected li { display: none; }
 #work .selected li.active { display: block; }
 #work .selected h2 { font-size: 3em; font-weight: bold; color: red; position: relative; }
@@ -30,6 +30,6 @@ body { background: transparent url('../img/notebook-bg.jpg') repeat scroll top l
 #resume .files a.rtf { background-image: url('../img/rtf.png'); }
 #resume .files a.pdf { background-image: url('../img/pdf.png'); }
 #resume .files a.doc { background-image: url('../img/doc.png'); }
-#status { width: 300px; height: 261px; padding-top: 50px; text-align: center; background: transparent url('../img/postit.png') no-repeat scroll top left; }
-#status h1 { font-size: 1.8em; font-weight: bold; margin-bottom: 0.5em; }
+#status { width: 300px; height: 271px; padding-top: 40px; text-align: center; background: transparent url('../img/postit.png') no-repeat scroll top left; float: left;  }
+#status h1 { font-size: 1.8em; font-weight: bold; margin-bottom: 0.3em; }
 #status samp { font-size: 1.9em; display: block; line-height: 1.2em; margin-bottom: 0.2em; }

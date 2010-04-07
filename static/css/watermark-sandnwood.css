@@ -9,7 +9,7 @@ strong { color: #beefff; font-weight: normal; }
 #example .tryme { position: absolute;  width: 70px; height: 60px; font-size: 1em; padding-bottom: 50px; background: transparent url('../img/tryme.png') no-repeat scroll right bottom; }
 #example input,
 #example textarea { display: block; margin: 1em 0 0 5em; width: 22em; padding: 0; font-size: 1em; font-family: "GenevaPlain"; border: solid 1em #FFF; }
-#example textarea { height: 4e; }
+#example textarea { height: 4em; }
 #source { float: left; padding: 1em; background-color: #FFF; color: #502900; margin: 1em 0 0 2em; width: 30em; }
 #source img { float: left; margin: -0.4em 0.3em 0 -0.2em; }
 #source h3 { font-size: 1.6em; padding: 0.3em 0 0.2em; }
