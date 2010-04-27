@@ -1,0 +1,17 @@
+body { background: #FFF url('../img/piano-bg.jpg') no-repeat scroll top left; font-family: Arial, Sans; min-width: 30em; }
+.demo { background-color: #FFF; border: solid 0.2em #222; padding: 1em; width: 160px; float: left; margin-left: 19em; margin-top: 10em; }
+.demo strong { margin-bottom: 0.6em; display: block; }
+.demo #piano { background-color: #222; border: solid 5px #000; }
+.content { position: relative; margin-left: 32em; width: 37em; margin-bottom: 5em; }
+.content h1 { font-size: 4em; color: #222; text-transform: uppercase; }
+.content h2 { font-size: 3em; color: #222; text-transform: uppercase; margin: 0 0 0.2em 0.3em; }
+.content h3 { font-size: 2em; color: #222; margin: 0 0 0.2em 0.4em; font-family: monospace; }
+.content dl { margin: 0.5em 1em; }
+.content dl dl { border-left: solid 0.4em; margin: 0 0 1em 0; padding-left: 0.7em; }
+.content dt { font-weight: bold; font-size: 1.2em; padding-bottom: 0.2em; }
+.content dd { font-size: 0.8em; padding-bottom: 1em; line-height: 1.5em; color: #666; }
+.content dd.last { padding-bottom: 0; }
+.content small { font-size: 0.7em; line-height: 1.2em; margin: -0.5em 0 1em 1em; display: block; font-style: italic; }
+.content pre, .content div.syntaxhighlighter,
+.content p { margin: 1em !important; line-height: 1.5em; font-size: 0.8em; }
+.content span { padding: 0.3em 1em; display: block; line-height: 1.5em; font-size: 1em; }

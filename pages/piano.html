@@ -1,0 +1,76 @@
+<div class="demo ui-corner-all">
+	<strong>Try It Here!</strong>
+	<div id="piano" class="ui-corner-all"></div>
+</div>
+
+<div class="content">
+	<h1>The HTML5 Piano</h1>
+	<span>{{ description }}</span>
+	<h2>Installation</h2>
+	<p>To install The HTML5 Piano, begin by downloading the source code as either a <a href="http://github.com/azoff/HTML5piano/zipball/master">zip archive</a> or a <a href="http://github.com/azoff/HTML5piano/tarball/master">compressed tarball</a>. If you are a <a href="http://git-scm.com/">Git</a> user, you can also pull the latest revision of HTML5 Piano from its <a href="http://github.com/azoff/HTML5piano">GitHub repository</a>. The source archive includes a production and development build of the piano source (html5piano.js), the image to use when an unsupported browser is detected (browser.jpg), and a folder that holds the audio data (instruments). You may distribute these assets into your server however you like, just make sure to update the references (at the top of the piano source), so that the script knows where to find them.</p>
+	<pre class="brush:js">AUDIO_FOLDER = "path/to/instruments";
+BROWSER_IMAGE = "path/to/browser.jpg";</pre>
+	<p>Once the script is properly configured, add it to your source code and then run the initializer when your document is ready. Since I use <a href="http://jquery.com">jQuery</a>, the example below shows how to call the the initializer using jQuery&rsquo;s <a href="http://api.jquery.com/ready/">ready() method:</a></p>
+	<pre class="brush:html">&lt;script src="html5piano.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+jQuery(document).ready(function(){
+    Piano.load("someElementId");
+});
+&lt;/script&gt;</pre>
+	<p>The initializer above should get you started, but the real power of HTML5 Piano comes from customizing it, via the optional second argument in the load method. For more info on how to leverage the full API, reference the documentation below.</p>
+	<h2>API Documentation</h2>
+	<p>The following methods and properties are publicly available via the Piano API.</p>
+	<h3 id="load">Piano.load(container [, options])</h3>
+	<dl>
+		<dt>container</dt>
+		<dd>An element that will hold the piano created by the load method. You may provide the id of the container as a string, or simply pass the HTMLElement itself.</dd>
+		<dt>options</dt>
+		<dd>An optional JavaScript map that can be used to customize the size, appearance, and sound of the piano.</dd>
+		<dl>
+			<dt>height</dt>
+			<dd>The height (in pixels) of the piano, <em>default 150</em></dd>
+			<dt>width</dt>
+			<dd>The width (in pixels) of the piano, <em>default 150</em></dd>
+			<dt>voice</dt>
+			<dd>The voice to use for the piano, must be an enumeration of <a href="#Voices">Piano.Voices</a>, <em>default Piano.Voices.GRAND_PIANO</em></dd>
+			<dt>backgroundFill</dt>
+			<dd>The hex color code for the background fill color, <em>default "#8A4B08"</em></dd>
+			<dt>backgroundStroke</dt>
+			<dd>The hex color code for the background stroke color, <em>default "#000"</em></dd>
+			<dt>whiteKeyFill</dt>
+			<dd>The hex color code for the white keys fill, <em>default "#FFF"</em></dd>
+			<dt>whiteKeyStroke</dt>
+			<dd>The hex color code for the white keys stroke, <em>default "#333"</em></dd>
+			<dt>blackKeyFill</dt>
+			<dd>The hex color code for the black keys fill, <em>default "#000"</em></dd>
+			<dt>blackKeyStroke</dt>
+			<dd>The hex color code for the black keys stroke, <em>default "#333"</em></dd>
+			<dt>activeKeyFill</dt>
+			<dd>The hex color code for the active (pressed) keys fill, <em>default "#333"</em></dd>
+			<dt>activeKeyStroke</dt>
+			<dd>The hex color code for the active (pressed) keys stroke, <em>default "#000"</em></dd>
+			<dt>loaderFill</dt>
+			<dd>The hex color code for the loader bar text and bar fill, <em>default "#000"</em></dd>
+			<dt>loaderFont</dt>
+			<dd>The font to use for the loader text, <em>default "'Times New Roman', Times"</em></dd>
+			<dt>titleColor</dt>
+			<dd>The hex color code for the piano title text, <em>default "#FFF"</em></dd>
+			<dt>titleFont</dt>
+			<dd>The font to use for the piano title text, <em>default "'Times New Roman', Times"</em></dd>
+			<dt>powerOnFill</dt>
+			<dd>The hex color code for the power indicator fill (when on), <em>default "#0F0"</em></dd>
+			<dt>powerOnStroke</dt>
+			<dd>The hex color code for the power indicator stroke (when on), <em>default "#000"</em></dd>
+			<dt>powerOffFill</dt>
+			<dd>The hex color code for the power indicator fill (when off), <em>default "#F00"</em></dd>
+			<dt>powerOffStroke</dt>
+			<dd class="last">The hex color code for the power indicator stroke (when off), <em>default "#000"</em></dd>
+		</dl>
+	</dl>
+	<h3 id="Voices">Piano.Voices</h3>
+	<small>Currently, there is only support for one voice due to the overhead involved in making them work with all HTML5 audio elements. If you are willing to contribute, please <a href="/contact">contact me</a> directly.</small>
+	<dl>
+		<dt>GRAND_PIANO</dt>
+		<dd>Represents a grand piano voice</dd>
+	</dl>
+</div>

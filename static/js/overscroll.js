@@ -1,7 +1,5 @@
 $(function(content, source, overlay){
 	
-	SyntaxHighlighter.all();
-	
 	content = $("#content");
 	
 	$("#screen", content).overscroll();
