@@ -22,39 +22,55 @@ class AssetMinificationHandler(webapp.RequestHandler):
 	
 	if len(files) > 0:
 		
-		output = memcache.get(files) if Defaults.USE_MEMCACHE else None
+		output = { }
 		
-		if output is None:
+		if files == "flush":
 			
-			output = { "Content": "" }
+			output["Content-Type"] = "text/plain"
 			
-			if files.endswith(".js"):
-				
-				output["Content-Type"] = "text/javascript"
-
-				for f in files.split(","):
-					
-					f = f.strip();
-					
-					output["Content"] += open(path.join(JS, f)).read()
-					
-				output["Content"] = jspack(jsmin(output["Content"]))
-				
+			if memcache.flush_all():
+			
+				output["Content"] = "OK"
+			
 			else:
 				
-				output["Content-Type"] = "text/css"
+				output["Content"] = "ERR"
+			
+		else:
+		
+			output = memcache.get(files) if Defaults.USE_MEMCACHE else None
+		
+			if output is None:
+			
+				output = { "Content": "" }
+			
+				if files.endswith(".js"):
 				
-				for f in files.split(","):
-					
-					f = f.strip()
-					
-					output["Content"] += open(path.join(CSS, f)).read()
-					
-				output["Content"] = cssmin(output["Content"], 3)					
+					output["Content-Type"] = "text/javascript"
 
-			if Defaults.USE_MEMCACHE and not memcache.add(files, output, TIMEOUT):
+					for f in files.split(","):
+					
+						f = f.strip();
+					
+						output["Content"] += open(path.join(JS, f)).read()
+					
+					output["Content"] = jspack(jsmin(output["Content"]))
+				
+				else:
+				
+					output["Content-Type"] = "text/css"
+				
+					for f in files.split(","):
+					
+						f = f.strip()
+					
+						output["Content"] += open(path.join(CSS, f)).read()
+					
+					output["Content"] = cssmin(output["Content"], 3)					
 
-				logging.error("Could not save value into memcached for key %s" % files)	
+				if Defaults.USE_MEMCACHE and not memcache.add(files, output, TIMEOUT):
+
+					logging.error("Could not save value into memcached for key %s" % files)	
 				
 				
 		self.response.headers['Content-Type'] = output["Content-Type"]
