@@ -6,7 +6,7 @@ from google.appengine.ext.webapp import util
 from src.handlers import PageRequestHandler, AssetMinificationHandler
 
 if __name__ == '__main__':
-	
+
 	application = webapp.WSGIApplication([('/minify/(.*)', AssetMinificationHandler),
 										  ('/(.*)', PageRequestHandler)], debug=True)
 	

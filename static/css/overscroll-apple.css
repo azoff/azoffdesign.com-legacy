@@ -2,12 +2,12 @@
 #title h1 { font-weight: bold; font-size: 5em; }
 #title h2 { font-weight: normal; padding: 0 1em; line-height: 1.5em; font-size: 0.8em; }
 #content { margin: 1em auto 0; width: 1135px; position: relative; display: block; }
-#ithing { padding: 30px 41px 96px 42px; width: 710px; height: 424px; background: transparent url('../img/ithing.png') no-repeat scroll top right; position: absolute; z-index: 2; left: 0; }
+#ithing { padding: 30px 41px 96px 42px; width: 710px; height: 424px; background: transparent url('/static/img/ithing.png') no-repeat scroll top right; position: absolute; z-index: 2; left: 0; }
 #source { position: absolute; z-index: 1; width: 300px; margin-top: 30px; right: 0; border: solid 1px #CCC; padding: 0 20px; }
 #source .section { margin: 20px 0; padding: 10px 40px 0 0; background: transparent none no-repeat scroll top right; min-height: 48px; }
-#source #download { background-image: url(../img/package-closed.png); }
-#source #include { background-image: url(../img/package-opened.png); }
-#source #run { background-image: url(../img/package-run.png); }
+#source #download { background-image: url('/static/img/package-closed.png'); }
+#source #include { background-image: url('/static/img/package-opened.png'); }
+#source #run { background-image: url('/static/img/package-run.png'); }
 #source h5 { font-weight: normal; font-size: 1.2em; padding-bottom: 0.2em; color: #444; }
 #source span { font-size: 0.8em; color: #333; line-height: 1.2em; }
 #screen { overflow: hidden; height: 424px; width: 710px; }

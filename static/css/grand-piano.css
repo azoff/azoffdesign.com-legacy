@@ -1,4 +1,4 @@
-body { background: #FFF url('../img/piano-bg.jpg') no-repeat scroll top left; font-family: Arial, Sans; min-width: 30em; }
+body { background: #FFF url('/static/img/piano-bg.jpg') no-repeat scroll top left; font-family: Arial, Sans; min-width: 30em; }
 .demo { background-color: #FFF; border: solid 0.2em #222; padding: 1em; width: 160px; float: left; margin-left: 19em; margin-top: 10em; }
 .demo strong { margin-bottom: 0.6em; display: block; }
 .demo #piano { background-color: #222; border: solid 5px #000; }

@@ -1,6 +1,6 @@
-body { background: transparent url('../img/metalstep-bg.jpg') repeat scroll top left; }
+body { background: transparent url('/static/img/metalstep-bg.jpg') repeat scroll top left; }
 body > iframe { display: none; }
-.content { color: #FFF; background: transparent url('../img/canvasblack-bg.jpg') repeat-y scroll center center; min-height: 35em; min-height: 100%; margin-left: 10em; width: 452px; padding: 1em 30px; font-family: "GenevaPlain"; }
+.content { color: #FFF; background: transparent url('/static/img/canvasblack-bg.jpg') repeat-y scroll center center; min-height: 35em; min-height: 100%; margin-left: 10em; width: 452px; padding: 1em 30px; font-family: "GenevaPlain"; }
 .content h1 { font-size: 2.7em; padding: 0.2em 0; margin-bottom: 0.5em; }
 .content #recaptcha_instructions_image { color: white !important; }
 .content .section { padding-bottom: 0.9em; }

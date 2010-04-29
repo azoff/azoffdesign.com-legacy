@@ -15,3 +15,4 @@ class Defaults:
 	KEYWORDS = _parser.get("defaults", "keywords")
 	SCRIPTS = _parser.get("defaults", "scripts")
 	STYLES = _parser.get("defaults", "styles")
+	USE_MEMCACHE = _parser.get("defaults", "memcache")

@@ -4,10 +4,10 @@ from google.appengine.ext import webapp
 from google.appengine.api import memcache, urlfetch
 
 from src.externs import jsmin, cssmin, jspack
+from src.model import Defaults
 
 import logging, urllib
 
-USE_MEMCACHE	= True
 TIMEOUT 		= 60 * 60 * 24
 ROOT 			= path.dirname(path.dirname(path.dirname(__file__)))
 ASSETS 			= path.join(ROOT, "assets")
@@ -17,12 +17,12 @@ JS 				= path.join(ASSETS, "js")
 class AssetMinificationHandler(webapp.RequestHandler):
 
   def get(self, files):
-    
-	files = urllib.unquote(files).strip().replace(" ", "").lower()
+
+	files = urllib.unquote(files)
 	
 	if len(files) > 0:
 		
-		output = memcache.get(files) if USE_MEMCACHE else None
+		output = memcache.get(files) if Defaults.USE_MEMCACHE else None
 		
 		if output is None:
 			
@@ -34,6 +34,8 @@ class AssetMinificationHandler(webapp.RequestHandler):
 
 				for f in files.split(","):
 					
+					f = f.strip();
+					
 					output["Content"] += open(path.join(JS, f)).read()
 					
 				output["Content"] = jspack(jsmin(output["Content"]))
@@ -44,11 +46,13 @@ class AssetMinificationHandler(webapp.RequestHandler):
 				
 				for f in files.split(","):
 					
+					f = f.strip()
+					
 					output["Content"] += open(path.join(CSS, f)).read()
 					
 				output["Content"] = cssmin(output["Content"], 3)					
 
-			if not memcache.add(files, output, TIMEOUT):
+			if Defaults.USE_MEMCACHE and not memcache.add(files, output, TIMEOUT):
 
 				logging.error("Could not save value into memcached for key %s" % files)	
 				

@@ -1,4 +1,4 @@
-body { background: #FFF url('../img/about-bg.jpg') no-repeat fixed bottom left; }
+body { background: #FFF url('/static/img/about-bg.jpg') no-repeat fixed bottom left; }
 .content { margin: 3em 3em 0 20em; padding-bottom: 2em; }
 .content h1 { font-size: 5em; padding-bottom: 1em; }
 .content h2 { font-size: 1.8em; padding-left: 1em }

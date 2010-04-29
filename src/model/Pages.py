@@ -67,9 +67,8 @@ for page in _parser.sections():
 				if alias:
 					alias = alias.strip().lower()
 					_map[alias] = model
-
-def getProjects():
-	return _projects
+					
+_default["projects"] = _projects
 
 def getPage(url):
 	url = url.strip().lower() if url else ""
