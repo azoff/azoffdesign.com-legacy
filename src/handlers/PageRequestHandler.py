@@ -14,9 +14,13 @@ class PageRequestHandler(webapp.RequestHandler):
 
 	model = Pages.getPage(url)
 	
-	if (not model["isCompiled"]) or ("source" not in model):
+	if not model["isCompiled"] or ("source" not in model):
 		
 		model["source"] = template.render(model["path"], model)
+		
+	if model["isDefault"]:
+
+		model["projects"] = Pages.getProjects();
 
 	self.response.out.write(template.render(TEMPLATE_PATH, model))
 	

@@ -1,1 +1,21 @@
-INDEX
+<div id="sky">
+	<img alt="" class="cloud small" src="/static/img/cloud-sml.png" />
+	<h1 class="font-bleeding-cowboys">Azoff Design</h1>
+	<img alt="" class="cloud medium" src="/static/img/cloud-med.png" />
+	<h2 class="font-arial-sans">The project-driven portfolio of <a href="/about">Jonathan Azoff</a>.</h2>
+	<img alt="" class="cloud large" src="/static/img/cloud-lrg.png" />
+</div>
+
+<div id="grass"></div>
+
+<div id="projects">
+	<ul>
+		{% for project in projects %}
+			<li class="ui-helper-clearfix">
+				<div class="ui-corner-all"><a href="{{ project.link }}" style="background-image: url({{ project.thumb }})"></a></div>
+				<h3 class="font-arial-sans"><a href="{{ project.link }}">{{ project.title }}</a></h3>
+				<span class="font-arial-sans">{{ project.summary }} <a href="{{ project.link }}">read more</a></span>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
