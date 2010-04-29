@@ -1,28 +1,28 @@
 @font-face {
 	font-family: 'BleedingCowboysRegular';
-	src: url('../misc/BleedingCowboys.eot');
+	src: url('/static/misc/BleedingCowboys.eot');
 	src: local('Bleeding Cowboys'), 
 		 local('BleedingCowboys'), 
-		 url('../misc/BleedingCowboys.woff') format('woff'), 
-		 url('../misc/BleedingCowboys.ttf') format('truetype');
+		 url('/static/misc/BleedingCowboys.woff') format('woff'), 
+		 url('/static/misc/BleedingCowboys.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'CanarsieSlabJLRegular';
-	src: url('../misc/CanarsieSlab.eot');
+	src: url('/static/misc/CanarsieSlab.eot');
 	src: local('Canarsie Slab JL'), 
 		 local('CanarsieSlabJL'), 
-		 url('../misc/CanarsieSlab.woff') format('woff'), 
-		 url('../misc/CanarsieSlab.ttf') format('truetype');
+		 url('/static/misc/CanarsieSlab.woff') format('woff'), 
+		 url('/static/misc/CanarsieSlab.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'GenevaPlain';
-	src: url('../misc/Geneva.eot');
+	src: url('/static/misc/Geneva.eot');
 	src: local('Geneva'), 
 		 local('GenevaPlain'), 
-		 url('../misc/Geneva.woff') format('woff'), 
-		 url('../misc/Geneva.ttf') format('truetype');
+		 url('/static/misc/Geneva.woff') format('woff'), 
+		 url('/static/misc/Geneva.ttf') format('truetype');
 }
 
 @font-face {
@@ -30,26 +30,26 @@
 	src: url('PlaytimeWithHotToddies.eot');
 	src: local('Playtime With Hot Toddies'), 
 		 local('PlaytimeWithHotToddies'), 
-		 url('../misc/PlaytimeWithHotToddies.woff') format('woff'),
-		 url('../misc/PlaytimeWithHotToddies.ttf') format('truetype');
+		 url('/static/misc/PlaytimeWithHotToddies.woff') format('woff'),
+		 url('/static/misc/PlaytimeWithHotToddies.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'SFGrungeSansShadowRegular';
-	src: url('../misc/SF_Grunge_Sans_Shadow.eot');
+	src: url('/static/misc/SF_Grunge_Sans_Shadow.eot');
 	src: local('SF Grunge Sans Shadow'), 
 		 local('SFGrungeSansShadow'), 
-		 url('../misc/SF_Grunge_Sans_Shadow.woff') format('woff'), 
-		 url('../misc/SF_Grunge_Sans_Shadow.ttf') format('truetype');
+		 url('/static/misc/SF_Grunge_Sans_Shadow.woff') format('woff'), 
+		 url('/static/misc/SF_Grunge_Sans_Shadow.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'SFGrungeSansRegular';
-	src: url('../misc/SF_Grunge_Sans.eot');
+	src: url('/static/misc/SF_Grunge_Sans.eot');
 	src: local('SF Grunge Sans'), 
 		 local('SFGrungeSans'), 
-		 url('../misc/SF_Grunge_Sans.woff') format('woff'), 
-		 url('../misc/SF_Grunge_Sans.ttf') format('truetype');
+		 url('/static/misc/SF_Grunge_Sans.woff') format('woff'), 
+		 url('/static/misc/SF_Grunge_Sans.ttf') format('truetype');
 }
 
 @font-face {
