@@ -9,7 +9,6 @@ $(function(left, animate){
 	width = $(window).width();
 
 	animate = function(cloud) {
-		cloud.top = cloud.top || (cloud.bottom - 30);
 		cloud.right = cloud.right || (width - cloud.elm.width());
 		cloud.elm.animate({left:cloud.right, top:cloud.top, opacity:0}, cloud.time, "easeOutQuad", function(){
 			cloud.elm.css({left:cloud.left, top:cloud.bottom, opacity:1});
@@ -21,6 +20,7 @@ $(function(left, animate){
 		elm: $(".cloud.small"),
 		left: -300,
 		bottom: 40,
+		top: 30,
 		time: 60 * 1000
 	});
 		
@@ -28,6 +28,7 @@ $(function(left, animate){
 		elm: $(".cloud.medium"),
 		left: -500,
 		bottom: 290,
+		top: 220,
 		time: 45 * 1000
 	});
 		
@@ -35,6 +36,7 @@ $(function(left, animate){
 		elm: $(".cloud.large"),
 		left: -700,
 		bottom: 60,
+		top: 40,
 		time: 40 * 1000
 	});
 	

@@ -4,12 +4,12 @@ body { background: transparent url('/static/img/dirt-bg.jpg') repeat scroll top 
 #sky h2 { margin: 12.4em 0 0 23.5em; font-size: 1.5em; width: 22.5em; color: #222; position: absolute; z-index: 90; }
 #sky h2 a { color: #222; text-decoration: none; }
 #sky h2 a:hover { border-bottom: solid 0.2em #222; }
-#projects { padding: 0 1.5em 1em; width: 79.5em; margin: 0 auto; }
+#projects { padding: 0 1.5em 1em; width: 71.5em; margin: 0 auto; }
 #projects li { padding-bottom: 2em; }
-#projects li h3 { float: left; display: block; font-size: 2.1em; padding: 0.5em 0 0; }
+#projects li h3 { float: left; display: block; font-size: 1.8em; padding: 0.5em 0 0; }
 #projects li h3 a { text-decoration: none; color: #8cd500; } 
 #projects li h3 a:hover { color: #FFF; } 
-#projects li span { float: left; display: block; color: #FFF; font-size: 1.7em; padding: 0.5em 0 0; width: 31em; line-height: 1.2em; }
+#projects li span { float: left; display: block; color: #FFF; font-size: 1.2em; padding: 0.5em 0 0; width: 38em; line-height: 1.2em; }
 #projects li span a { text-decoration: none; color: #8cd500; }
 #projects li span a:hover { color: #FFF }
 #projects li div { float: right; border: solid 0.1em #000; background-color: #FFF; padding: 1em; }

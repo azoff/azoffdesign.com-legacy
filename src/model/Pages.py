@@ -25,7 +25,7 @@ def _keyExists(section, key):
 	return (_parser.has_option(section, key) and len(_parser.get(section, key)) > 0)
 
 def _getSummary(description):
-	start = 250
+	start = 350
 	end = description.find(" ", start)
 	return  "%s..." % description[0:end]
 
