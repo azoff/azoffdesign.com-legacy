@@ -1,0 +1,63 @@
+<div id="top" class="font-geneva">
+    <div id="title">
+        <h1>{{ title }}</h1>
+        <h2>{{ description }}</h2>
+    </div>
+    <div id="wave"></div>
+</div>
+<div id="bottom" class="font-geneva">
+    <div id="download">
+        <h3>Using jWave is Easy!</h3>
+        <ol>
+            <li>Download either the <a href="http://github.com/azoff/jWave/raw/master/jquery.jwave.js">development</a> or <a href="http://github.com/azoff/jWave/raw/master/jquery.jwave.min.js">production</a> version of jWave.</li>
+            <li>
+                Include the script into your page or project (don't forget <a href="http://jquery.com">jQuery</a>!):
+                <pre class="brush:xml">&lt;script src="jquery.js">&lt;/script>
+&lt;script src="jquery.jwave.js">&lt;/script></pre>
+            </li>
+            <li>
+                Pick a wave you wish to embed, isolate the <a href="#waveid">wave&rsquo;s id</a>, and load it into a jQuery selection:
+                <pre class="brush:js">$("#waveTarget").jwave("googlewave.com!w+1EznGiPwA");</pre>
+            </li>
+            <li>For more options, including the ability to style the embedded wave and define an onload callback, refer to the <a href="#api">API documentation below.</a></li>
+        </ol>
+    </div>
+    <div id="api">
+        <h3>API documentation</h3>
+        <p>Both jWave method variants are publicly accessible via the selector prototype (jQuery.fn), and can be accessed by calling <span class="font-courier-new">jwave()</span> on any jQuery selection.</p>
+        <h4 id="jwave" class="font-courier-new">jQuery.fn.jwave(waveId [, callback])</h3>
+        <dl class="font-courier-new">
+            <dt id="waveid">waveId <em>String</em> <em class="bold">Required</em></dt>
+        	<dd>The Google Wave ID corresponding to the wave to be embedded. For details on how to get a Wave ID, see <a href="http://wave-api-faq.appspot.com/#waveid">The Official Reference</a>.</dd>
+        	<dt>callback  <em>Function(WavePanel)</em> <em>Optional</em></dt>
+        	<dd>An optional function that will be called after the wave is loaded. The function is passed one argument, the corresponding <a href="http://code.google.com/apis/wave/embed/reference.html#WavePanel">WavePanel</a> instance generated in the call to jWave.</dd>
+        </dl>
+        <h4 class="font-courier-new">jQuery.fn.jwave(waveId [, options [, callback]])</h3>
+        <dl class="font-courier-new">
+            <dt>waveId <em>String</em> <em class="bold">Required</em></dt>
+        	<dd>The Google Wave ID corresponding to the wave to be embedded. For details on how to get a Wave ID, see <a href="http://wave-api-faq.appspot.com/#waveid">The Official Reference</a>.</dd>
+        	<dt>options <em>Object</em> <em>Optional</em></dt>
+        	<dd>A dictionary of options that modify the appearance, behavior, and/or the endpoint of the loaded wave. Possible property/value definitions can be found below, and directly correspond with the <a href="http://code.google.com/apis/wave/embed/reference.html#EmbedOptions">EmbedOptions</a> used in the <a href="http://code.google.com/apis/wave/embed/reference.html#WavePanel">WavePanel</a> constructor.</dd>
+        	<dl>
+        	   <dt>bgcolor <em>String</em> <em>Optional</em></dt>
+        	   <dd>The background color CSS property to be set on the embedded wave panel. Note: This property does not currently work as expected, and will be fixed in a future release.</dd>
+        	   <dt>footer <em>Boolean</em> <em>Optional</em></dt>
+           	   <dd>A flag indicating whether or not the embed wave panel footer should be displayed.</dd>
+           	   <dt id="options-header">header <em>Boolean</em> <em>Optional</em></dt>
+           	   <dd>A flag indicating whether or not the embed wave panel header should be displayed.</dd>
+           	   <dt>height <em>Number</em> <em>Optional</em></dt>
+           	   <dd>The display height of the embedded wave panel in pixels. Prefer specifying the width/height of the containing div in your html if possible.</dd>
+           	   <dt>rootUrl <em>String</em> <em>Optional</em></dt>
+           	   <dd>The Google Wave server URL that will serve the embedded wave. Note that the URL must have a trailing '/' By default this value is presumed to be google wave preview: https://wave.google.com/wave/</dd>
+           	   <dt>target <em>Element</em> <em>Optional</em></dt>
+           	   <dd>The div element inside which to insert the embedded wave panel. <strong>Note** Setting this value will override whatever element was selected in the jQuery selector.</strong></dd>
+           	   <dt>toolbar <em>Boolean</em> <em>Optional</em></dt>
+           	   <dd>A flag indicating whether or not the embed wave panel toolbar should be displayed. Note that this flag is only valid if the <a href="#options-header">header</a> is enabled.</dd>
+           	   <dt>width <em>Number</em> <em>Optional</em></dt>
+           	   <dd>The display width of the embedded wave panel in pixels. Prefer specifying the width/height of the containing div in your html if possible.</dd>
+        	</dl>
+        	<dt>callback  <em>Function(WavePanel)</em> <em>Optional</em></dt>
+        	<dd>An optional function that will be called after the wave is loaded. The function is passed one argument, the corresponding <a href="http://code.google.com/apis/wave/embed/reference.html#WavePanel">WavePanel</a> instance generated in the call to jWave.</dd>
+        </dl>
+    </div>    
+</div>

@@ -61,6 +61,7 @@
 		 url('eagernaturalist.ttf') format('truetype');
 }
 
+.font-courier-new { font-family: "Courier New", Courier; }
 .font-times-roman { font-family: "Times New Roman", Courier, Garamond, serif; }
 .font-arial-sans { font-family: Arial, Sans; }
 .font-eager-naturalist { font-family: "EagerNaturalistRegular"; }
