@@ -3,11 +3,15 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
-from src.handlers import PageRequestHandler, AssetMinificationHandler
+from src.handlers import PageRequestHandler, AssetMinificationHandler, SitemapHandler
+
+_mappings = [];
+_mappings.append(('/minify/(.*)', AssetMinificationHandler));
+_mappings.append(('/sitemap.xml', SitemapHandler));
+_mappings.append(('/(.*)', PageRequestHandler));
 
 if __name__ == '__main__':
 
-	application = webapp.WSGIApplication([('/minify/(.*)', AssetMinificationHandler),
-										  ('/(.*)', PageRequestHandler)], debug=True)
+	application = webapp.WSGIApplication(_mappings, debug=True)
 	
 	util.run_wsgi_app(application)

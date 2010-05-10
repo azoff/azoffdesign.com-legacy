@@ -8,6 +8,10 @@ handlers:
   static_files: static/\1/\2
   upload: static/.*
   
+- url: /robots.txt
+  static_files: static/misc/robots.txt
+  upload: static/.*
+  
 - url: /resume/(doc|rtf|pdf)
   static_files: static/misc/resume.\1
   upload: static/.*

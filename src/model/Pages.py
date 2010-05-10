@@ -15,11 +15,10 @@ STYLES			= Defaults.STYLES
 SCRIPTS			= Defaults.SCRIPTS
 
 _map = {}
-
-_projects = [];
+_aliases = []
+_projects = []
 
 _parser = RawConfigParser()
-
 _parser.read(PAGES)
 
 def _keyExists(section, key):
@@ -69,9 +68,13 @@ for page in _parser.sections():
 				if alias:
 					alias = alias.strip().lower()
 					_map[alias] = model
-	
+
+_aliases = _map.keys();
 _projects = sorted(_projects, key=lambda project: project["date"], reverse=True);				
 _default["projects"] = _projects
+
+def getAliases():
+	return _aliases;
 
 def getPage(url):
 	url = url.strip().lower() if url else ""
