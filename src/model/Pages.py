@@ -1,6 +1,7 @@
-from ConfigParser import ConfigParser
+from ConfigParser import RawConfigParser
 from os import path
 from datetime import datetime
+from time import strptime
 
 from src.model import Defaults
 
@@ -15,9 +16,9 @@ SCRIPTS			= Defaults.SCRIPTS
 
 _map = {}
 
-_projects = []
+_projects = [];
 
-_parser = ConfigParser()
+_parser = RawConfigParser()
 
 _parser.read(PAGES)
 
@@ -42,7 +43,8 @@ for page in _parser.sections():
 		model["pageTitle"] 	= "%s | %s" % (TITLE, model["title"])
 		model["description"]= _parser.get(page, "description") if _keyExists(page, "description") else DESCRIPTION
 		model["isCompiled"] = _parser.getboolean(page, "compile") if _keyExists(page, "compile") else False
-		model["isProject"]	= _parser.getboolean(page, "project") if _keyExists(page, "project") else False
+		model["isProject"]	= _keyExists(page, "date")
+		model["date"]		= datetime(*strptime(_parser.get(page, "date"), "%m/%d/%Y")[0:5]) if model["isProject"] else datetime.now()
 		model["isDefault"]	= _parser.getboolean(page, "default") if _keyExists(page, "default") else False
 		model["year"] 		= datetime.now().year
 
@@ -56,7 +58,7 @@ for page in _parser.sections():
 			model["link"] = "/%s" % page
 			model["thumb"] = "/static/img/thumb-%s.jpg" % page
 			model["summary"] = _getSummary(model["description"])
-			_projects.insert(0, model)
+			_projects.append(model)
 	
 		if model["isDefault"]:
 			_default = model
@@ -67,7 +69,8 @@ for page in _parser.sections():
 				if alias:
 					alias = alias.strip().lower()
 					_map[alias] = model
-					
+	
+_projects = sorted(_projects, key=lambda project: project["date"], reverse=True);				
 _default["projects"] = _projects
 
 def getPage(url):

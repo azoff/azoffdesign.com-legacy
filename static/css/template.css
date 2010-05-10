@@ -10,7 +10,7 @@ body { position: absolute; width: 100%; height: 100%; overflow: auto; }
 .ui-dialog-buttonpane { padding: 0 !important; }
 .ui-dialog-buttonpane .ui-button { font-size: 0.6em; font-family: "GenevaPlain"; padding: 0.2em !important; }
 
-.widgit { position: fixed; z-index: 97; }
+.widgit { position: fixed; z-index: 95; }
 .widgit.open { z-index: 99; } 
 .widgit_tab { cursor: pointer; padding: 0.2em; }
 .widgit_button { padding: 0.3em 0.5em 0.4em; font-weight: normal; }
@@ -32,7 +32,7 @@ body { position: absolute; width: 100%; height: 100%; overflow: auto; }
 #navigation .widgit_content a:hover { color: #666; }
 #navigation.open .widgit_content { margin-top: 0em; }
 
-#copyright {  bottom: -2px; width: 100%; margin-bottom: -5.3em; }
+#copyright {  bottom: -2px; width: 100%; margin-bottom: -5.3em; z-index: 97; }
 #copyright.open { margin-bottom: 0em; }
 #copyright .widgit_tab { padding-bottom: 0; border-bottom: 0 none; margin: 0 auto -1px auto; width: 30em; text-align: center; }
 #copyright .widgit_content { margin: 0 2em 0 2em; height: 2.8em; background: #FFF url('/static/img/appengine-bg.jpg') no-repeat scroll top right; min-width: 62em; }
