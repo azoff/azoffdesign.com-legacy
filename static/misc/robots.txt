@@ -1,0 +1,4 @@
+Sitemap: http://www.azoffdesign.com/sitemap.xml
+
+User-agent: *
+Disallow:
