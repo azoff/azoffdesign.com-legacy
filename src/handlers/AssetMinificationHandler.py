@@ -3,7 +3,7 @@ from os import path
 from google.appengine.ext import webapp
 from google.appengine.api import memcache, urlfetch
 
-from src.externs import jsmin, cssmin, jspack
+from src.externs import closure, cssmin
 from src.model import Defaults
 
 import logging, urllib
@@ -54,7 +54,7 @@ class AssetMinificationHandler(webapp.RequestHandler):
 					
 						output["Content"] += open(path.join(JS, f)).read()
 					
-					output["Content"] = jspack(jsmin(output["Content"]))
+					output["Content"] = closure.compile(output["Content"])                    
 				
 				else:
 				
