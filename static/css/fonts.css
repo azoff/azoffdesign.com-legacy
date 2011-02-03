@@ -27,7 +27,7 @@
 
 @font-face {
 	font-family: 'PlaytimeWithHotToddiesRegular';
-	src: url('PlaytimeWithHotToddies.eot');
+	src: url('/static/misc/PlaytimeWithHotToddies.eot');
 	src: local('Playtime With Hot Toddies'), 
 		 local('PlaytimeWithHotToddies'), 
 		 url('/static/misc/PlaytimeWithHotToddies.woff') format('woff'),
@@ -54,11 +54,11 @@
 
 @font-face {
 	font-family: 'EagerNaturalistRegular';
-	src: url('eagernaturalist.eot');
+	src: url('/static/misc/eagernaturalist.eot');
 	src: local('Eager Naturalist'), 
 		 local('EagerNaturalist'), 
-		 url('eagernaturalist.woff') format('woff'), 
-		 url('eagernaturalist.ttf') format('truetype');
+		 url('/static/misc/eagernaturalist.woff') format('woff'), 
+		 url('/static/misc/eagernaturalist.ttf') format('truetype');
 }
 
 .font-courier-new { font-family: "Courier New", Courier; }
