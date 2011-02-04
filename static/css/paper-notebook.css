@@ -20,7 +20,7 @@ body { background: transparent url('/static/img/notebook-bg.jpg') repeat scroll 
 #work .tabs li { cursor: pointer; line-height: 20px; padding: 2px 0 8px 45px; width: 100px; font-size: 1.5em; background: transparent url('/static/img/thumbtack.png') no-repeat scroll 0 -30px; margin-bottom: 0.1em; color: #333; }
 #work .tabs li:hover { color: red; }
 #work .tabs li.active { color: red; background-position: 0 0; cursor: default; }
-#resume { width: 401px; margin: -3em 1em 0 0; float: right; padding: 8em 2em 2em; background: transparent url('/static/img/notepad-bg.png') repeat-x scroll top left; position: relative; }
+#resume { width: 401px; margin: -3em 0 0 39em; padding: 8em 2em 2em; background: transparent url('/static/img/notepad-bg.png') repeat-x scroll top left; position: fixed; }
 #resume h1 { font-size: 2.5em; padding-bottom: 0.2em }
 #resume small a { text-decoration: none; }
 #resume small a:hover { text-decoration: underline; }

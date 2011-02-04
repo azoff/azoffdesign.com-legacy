@@ -16,3 +16,4 @@ class Defaults:
 	SCRIPTS = _parser.get("defaults", "scripts")
 	STYLES = _parser.get("defaults", "styles")
 	USE_MEMCACHE = _parser.getboolean("defaults", "memcache")
+	COMPILE_MODE = _parser.get("defaults", "compile_mode")

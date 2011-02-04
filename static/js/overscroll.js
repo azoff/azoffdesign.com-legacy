@@ -25,7 +25,7 @@ $(function(content, source, overlay){
 	};
 	
 	overlay.fadeIn("fast").parent()
-		.bind("mouseenter", overlay.instantFadeOut)
-		.bind("mouseleave", overlay.delayedFadeIn);
+		.bind("mouseover", overlay.instantFadeOut)
+		.bind("mouseout", overlay.delayedFadeIn);
 	
 });
