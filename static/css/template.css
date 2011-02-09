@@ -39,3 +39,9 @@ body { position: absolute; width: 100%; height: 100%; overflow: auto; }
 #copyright .widgit_content small { font-size: 0.9em; line-height: 1.7em; float: left; width: 80%; height: 3.4em; position: relative; top: -0em; }
 #copyright .widgit_content a { font-weight: bold; text-decoration: none; }
 #copyright .widgit_content a:hover { color: #555; }
+
+.gist .gist-file,
+.gist .gist-file .gist-data { border: 0 none !important; margin: 0 !important; }
+.gist .gist-file .gist-data { background-color: transparent !important; overflow: hidden !important; font-size: 0.75em !important; line-height: 1.6em !important; }
+.gist .gist-file .gist-meta { opacity: .6; filter:Alpha(Opacity=60); border: 1px solid #DDDDDD !important; font-size: 0.6em !important; line-height: 1.9em !important; padding: 0em 0.5em !important; }
+.gist .gist-file .gist-meta:hover { opacity: 1; filter:Alpha(Opacity=100); }

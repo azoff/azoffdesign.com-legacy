@@ -33,9 +33,6 @@
 		}).mouseup(function(){
 			$(this).removeClass("ui-state-active");
 		});
-		
-		// highlight syntax blocks
-		SyntaxHighlighter.all();
 
 	});
 	

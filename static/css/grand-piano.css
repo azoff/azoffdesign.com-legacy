@@ -14,4 +14,6 @@ body { background: #FFF url('/static/img/piano-bg.jpg') no-repeat scroll top lef
 .content small { font-size: 0.7em; line-height: 1.2em; margin: -0.5em 0 1em 1em; display: block; font-style: italic; }
 .content pre, .content div.syntaxhighlighter,
 .content p { margin: 1em !important; line-height: 1.5em; font-size: 0.8em; }
-.content span { padding: 0.3em 1em; display: block; line-height: 1.5em; font-size: 1em; }
+.content .text { padding: 0.3em 1em; display: block; line-height: 1.5em; font-size: 1em; }
+.gist { padding: 0 0.7em !important; }
+.gist .gist-file .gist-data { font-size: 1em !important; }

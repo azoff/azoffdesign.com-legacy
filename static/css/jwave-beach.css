@@ -7,8 +7,6 @@ body { background-color: #FAFAFA; }
 #download h3 { font-size: 1.3em; color: #333; }
 #download ol { padding: 1em 1em 0.5em 2em; list-style: decimal; }
 #download li { padding-bottom: 0.5em; color: #444; line-height: 1.5em; }
-#download li pre,
-#download ol li .syntaxhighlighter { background-color: #FFF !important; border: 2px dashed #CCC !important; padding: 0.5em !important; }
 #api h3 { font-size: 1.3em; color: #333; }
 #api p { color: #444; padding: 0.5em; line-height: 1.5em; }
 #api h4 { padding: 0.8em 0.5em 0; color: #333; border-top: 2px dashed #CCC; font-size: 1.4em; }

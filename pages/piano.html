@@ -5,18 +5,12 @@
 
 <div class="content">
 	<h1>The HTML5 Piano</h1>
-	<span>{{ description }}</span>
+	<span class="text">{{ description }}</span>
 	<h2>Installation</h2>
 	<p>To install The HTML5 Piano, begin by downloading the source code as either a <a href="http://github.com/azoff/HTML5piano/zipball/master">zip archive</a> or a <a href="http://github.com/azoff/HTML5piano/tarball/master">compressed tarball</a>. If you are a <a href="http://git-scm.com/">Git</a> user, you can also pull the latest revision of HTML5 Piano from its <a href="http://github.com/azoff/HTML5piano">GitHub repository</a>. The source archive includes a production and development build of the piano source (html5piano.js), the image to use when an unsupported browser is detected (browser.jpg), and a folder that holds the audio data (instruments). You may distribute these assets into your server however you like, just make sure to update the references (at the top of the piano source), so that the script knows where to find them.</p>
-	<pre class="brush:js">AUDIO_FOLDER = "path/to/instruments";
-BROWSER_IMAGE = "path/to/browser.jpg";</pre>
+	<script src="https://gist.github.com/818066.js?file=step1.piano.js"></script>
 	<p>Once the script is properly configured, add it to your source code and then run the initializer when your document is ready. Since I use <a href="http://jquery.com">jQuery</a>, the example below shows how to call the the initializer using jQuery&rsquo;s <a href="http://api.jquery.com/ready/">ready() method:</a></p>
-	<pre class="brush:html">&lt;script src="html5piano.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-jQuery(document).ready(function(){
-    Piano.load("someElementId");
-});
-&lt;/script&gt;</pre>
+	<script src="https://gist.github.com/818066.js?file=step2.piano.html"></script>
 	<p>The initializer above should get you started, but the real power of HTML5 Piano comes from customizing it, via the optional second argument in the load method. For more info on how to leverage the full API, reference the documentation below.</p>
 	<h2>API Documentation</h2>
 	<p>The following methods and properties are publicly available via the Piano API.</p>
