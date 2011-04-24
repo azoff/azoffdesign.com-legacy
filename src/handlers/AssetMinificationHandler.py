@@ -8,7 +8,7 @@ from src.model import Defaults
 
 import logging, urllib
 
-TIMEOUT 		= 60 * 60 * 24
+TIMEOUT 		= 60 * 60 * 24 * 7
 ROOT 			= path.dirname(path.dirname(path.dirname(__file__)))
 ASSETS 			= path.join(ROOT, "assets")
 CSS 			= path.join(ASSETS, "css")
