@@ -7,7 +7,7 @@ import re
 COMPILER_URL='http://closure-compiler.appspot.com/compile'
 
 def compile(code):
-    
+
 	payload = urllib.urlencode([
 		('js_code', code),
 		('compilation_level', Defaults.COMPILE_MODE),
@@ -25,7 +25,7 @@ def compile(code):
 			
 			logging.error('Error returned from the closure compiler service: %s', response)
 			
-			response = ""
+			response = code
 		
 		return response
 		
@@ -33,4 +33,4 @@ def compile(code):
 		
 		logging.error('Error communicating with the closure compiler service: %s', e)
 		
-		return None
+		return code
