@@ -9,6 +9,7 @@ _parser.read(DEFAULTS)
 
 class Defaults:
 
+	BOT_EMAIL = _parser.get("defaults", "bot_email")
 	TITLE = _parser.get("defaults", "title")
 	DESCRIPTION = _parser.get("defaults", "description")
 	KEYWORDS = _parser.get("defaults", "keywords")
