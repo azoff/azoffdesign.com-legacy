@@ -8,8 +8,7 @@ _parser = ConfigParser()
 _parser.read(DEFAULTS)
 
 class Defaults:
-	
-	EMAIL = _parser.get("defaults", "email")
+
 	TITLE = _parser.get("defaults", "title")
 	DESCRIPTION = _parser.get("defaults", "description")
 	KEYWORDS = _parser.get("defaults", "keywords")
