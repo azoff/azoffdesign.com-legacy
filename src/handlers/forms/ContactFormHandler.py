@@ -2,7 +2,7 @@ import logging
 
 from urllib import quote
 
-from google.appengine.api import mail, urlfetch
+from google.appengine.api import urlfetch, mail
 
 from src.util import StatusMessage
 
@@ -26,35 +26,6 @@ class ContactFormHandler:
 				
 				output = urlfetch.fetch("http://api-verify.recaptcha.net/verify", recaptcha_data, 'POST')
 				
-				if output.status_code == 200:
-					
-					status = output.content.split("\n");
-					
-					if status[0] == "true":
-						
-						mail.send_mail(sender, Defaults.EMAIL, "Azoff Design - Contact Form Submission", body)
-
-						return StatusMessage(
-							StatusMessage.CODE_OK,
-							"Email Sent!", 
-							"Your email has been sent, thank you for your inquiry")
-						
-					else:
-						
-						return StatusMessage(
-							StatusMessage.CODE_INTERNAL_SERVER_ERROR,
-							"Validation Failed!", 
-							"It seems that the response you provided for the 'are you human' prompt was incorrect. Please review your submission and try again")
-					
-				else:
-					
-					logging.error("Recaptcha server errored out: '%s'" % output.content)
-					
-					return StatusMessage(
-						StatusMessage.CODE_INTERNAL_SERVER_ERROR,
-						"Oh No!", 
-						"The server was unable to reach the captcha validation service. As a result your request could not be validated. Please try again later.")
-				
 			except:
 				
 				logging.error("Unable to communicate with the recaptcha server, exception raised!")
@@ -63,6 +34,51 @@ class ContactFormHandler:
 					StatusMessage.CODE_INTERNAL_SERVER_ERROR,
 					"Oh No!", 
 					"The server was unable to reach the captcha validation service. As a result your request could not be validated. Please try again later.")
+			
+			if output is not None and output.status_code == 200:
+
+				status = output.content.split("\n");
+
+				if status[0] == "true":
+
+					try:
+
+						body = "%s said:\n\n %s" % (sender, body)
+
+						mail.send_mail_to_admins(Defaults.BOT_EMAIL, "Azoff Design - Contact Form Submission", body)
+
+						return StatusMessage(
+							StatusMessage.CODE_OK,
+							"Email Sent!", 
+							"Your email has been sent, thank you for your inquiry")
+					
+					except mail.Error, e:
+						
+						logging.error("Mail Service Error: %s" % e)
+						
+						return StatusMessage(
+							StatusMessage.CODE_INTERNAL_SERVER_ERROR,
+							"Email Service Failure!", 
+							"It seems that the service used to send emails has malfunctioned! Please try your request again later.")
+
+				else:
+
+					return StatusMessage(
+						StatusMessage.CODE_INTERNAL_SERVER_ERROR,
+						"Validation Failed!", 
+						"It seems that the response you provided for the 'are you human' prompt was incorrect. Please review your submission and try again")
+
+			else:
+				
+				output = 'No Output' if output is None else output.content
+				
+				logging.error("Recaptcha server errored out: '%s'" % output)
+
+				return StatusMessage(
+					StatusMessage.CODE_INTERNAL_SERVER_ERROR,
+					"Oh No!", 
+					"The server was unable to reach the captcha validation service. As a result your request could not be validated. Please try again later.")
+			
 			
 		else:
 			
