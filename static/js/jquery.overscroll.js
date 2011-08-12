@@ -13,7 +13,7 @@
  * For API documentation, see the README file
  *  https://github.com/azoff/Overscroll/blob/master/README.md
  *
- * Date: Friday, July 15th 2011
+ * Date: Thursday, August 11th 2011
  */
 
 /*jslint onevar: true, strict: true */
@@ -347,7 +347,7 @@
                     o.toggleThumbs(event.data, false);
                 }
 
-                // only if we moved, and the mouse down is the same as 
+                // only if we moved, and the mouse down is the same as
                 // the mouse up target do we defer the event
                 if (event.data.target.data('dragged') && $(event.target).is(event.data.startTarget)) {
                     event.data.target.data('dragged', false);
@@ -441,7 +441,7 @@
             sizing.container = {
                 width: container.width(),
                 height: container.height()
-            };            
+            };
 
             sizing.container.scrollWidth = (parent.scrollWidth == sizing.container.width ? 0 : parent.scrollWidth);
             sizing.container.scrollHeight = (parent.scrollHeight == sizing.container.height ? 0 : parent.scrollHeight);
@@ -463,9 +463,6 @@
                 }
             };
 
-            sizing.container.width -= sizing.thumbs.horizontal.width;
-            sizing.container.height -= sizing.thumbs.vertical.height;
-
             return sizing;
 
         },
@@ -481,7 +478,8 @@
                 "margin": size.top + "px 0 0 " + size.left + "px",
                 "-moz-border-radius": size.corner + "px",
                 "-webkit-border-radius": size.corner + "px",
-                "border-radius": size.corner + "px"
+                "border-radius": size.corner + "px",
+                "z-index": "999"
             };
 
         }

@@ -3,10 +3,9 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
-from src.handlers import PageRequestHandler, AssetMinificationHandler, SitemapHandler
+from src.handlers import PageRequestHandler, SitemapHandler
 
 _mappings = [];
-_mappings.append(('/minify/(.*)', AssetMinificationHandler));
 _mappings.append(('/sitemap.xml', SitemapHandler));
 _mappings.append(('/(.*)', PageRequestHandler));
 

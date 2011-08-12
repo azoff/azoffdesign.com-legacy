@@ -41,15 +41,13 @@ for page in _parser.sections():
 		model["title"]		= _parser.get(page, "title") if _keyExists(page, "title") else TITLE
 		model["pageTitle"] 	= "%s | %s" % (TITLE, model["title"])
 		model["description"]= _parser.get(page, "description") if _keyExists(page, "description") else DESCRIPTION
-		model["isCompiled"] = _parser.getboolean(page, "compile") if _keyExists(page, "compile") else False
+		model["cache"] = _parser.getboolean(page, "cache") if _keyExists(page, "cache") else False
 		model["isProject"]	= _keyExists(page, "date")
 		model["date"]		= datetime(*strptime(_parser.get(page, "date"), "%m/%d/%Y")[0:5]) if model["isProject"] else datetime.now()
 		model["isDefault"]	= _parser.getboolean(page, "default") if _keyExists(page, "default") else False
 		model["year"] 		= datetime.now().year
-
-		if not model["isCompiled"]:
-			model["scripts"] = model["scripts"].split(",")
-			model["styles"] = model["styles"].split(",")
+		model["scripts"] = model["scripts"].split(",")
+		model["styles"] = model["styles"].split(",")
 
 		_map[page] = model
 		
