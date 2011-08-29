@@ -1807,7 +1807,7 @@ QTIP.defaults = {
 		delay: 0,
 		fixed: FALSE,
 		inactive: FALSE,
-		leave: 'window',
+		leave: false,
 		distance: FALSE
 	},
 	style: {

@@ -8,4 +8,4 @@ body > iframe { display: none; }
 .content #sender,
 .content #body { width: 442px; border: 0 none; padding: 8px 10px; font-size: 1.2em; font-family: "GenevaPlain"; }
 .content #body { height: 4em; resize: none; }
-.content button { padding: 0.5em 0.8em; font-size: 1em; font-weight: bold; margin-left: 0.4em }
+.content button { font-size: 1em; font-weight: bold; margin-left: 0.4em }

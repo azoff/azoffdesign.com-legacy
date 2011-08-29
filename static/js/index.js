@@ -1,50 +1,32 @@
-(function($, global){
+(function($, global, math){
 	
-	global = $(global);
+	var frame = $(global), clouds, viewport;
 	
-	function easeOutQuad(x, t, b, c, d) {
-		return -c *(t/=d)*(t-2) + b;
+	function animateCloud() { var 
+	    cloud = $(this).stop(true, true),
+	    duration = parseInt(cloud.data('duration'), 10) * 1000,
+	    delay = parseInt(cloud.data('delay'), 10) * 1000,
+	    callback = $.proxy(animateCloud, this);
+	    cloud.animate({ translateX: 0, opacity: 1 }, 0);
+	    setTimeout(function(){
+	        cloud.animate({ translateX: viewport, opacity: 0 }, duration);
+    	    setTimeout(callback, duration);
+	    }, delay);
+	}
+
+	function animateClouds() {
+	    if (!viewport || frame.width() < viewport) {
+	        viewport = frame.width();
+	        clouds.each(animateCloud);
+	    }
 	}
 	
-	function animateCloud(cloud) {
-
+	function initClouds() {
+	    clouds = $('.cloud');
+	    frame.resize(animateClouds);
+	    animateClouds();
 	}
 	
-	function startClouds(clouds) {
-
-	}
+	$(initClouds);
 	
-	
-	$(function(){
-
-		var clouds = $(".cloud");
-
-		startClouds(clouds); 
-		
-		global.resize(function(){
-			clouds.stop(true, true);
-		});
-
-		$('.tip').qtip({
-			prerender: true,
-			solo: true,
-			position: {
-				my: 'bottom center',
-				at: 'top center',
-				target: 'event'
-			},
-			show: {
-				effect: function(offset) {
-					$(this).fadeIn(200); // "this" refers to the tooltip
-				}
-			},
-			style: {
-				classes: 'ui-tooltip-jtools'
-			}
-		});
-
-	});
-	
-	$.extend($.easing,{ easeOutQuad: easeOutQuad });
-	
-})(jQuery, window);
+})(jQuery, window, Math);

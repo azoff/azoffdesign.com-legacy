@@ -1,4 +1,4 @@
-(function(w){
+(function(w, $){
 	
 	var 
 	overlay,
@@ -14,6 +14,8 @@
 	
 	$(function(){
 
+        loadTips();
+
 		// get the overlay
 		overlay = $("#overlay");
 
@@ -24,15 +26,7 @@
 		loadDisqusCounter();
 		
 		// bind handlers for any buttons
-		$("button").mouseover(function(){
-			$(this).addClass("ui-state-hover");
-		}).mouseout(function(){
-			$(this).removeClass("ui-state-hover");
-		}).mousedown(function(){
-			$(this).addClass("ui-state-active");
-		}).mouseup(function(){
-			$(this).removeClass("ui-state-active");
-		});
+		$("button").button();
 
 	});
 	
@@ -52,7 +46,7 @@
 	
 		}
 			
-	};
+	}
 	
 	function onTabOut(tab, widgit) {
 		
@@ -72,7 +66,7 @@
 	
 		}
 			
-	};
+	}
 	
 	function onTabClick(tab, button, widgit) {
 
@@ -94,7 +88,7 @@
 		
 		widgit.data(openClass, !widgit.data(openClass));
 		
-	};
+	}
 	
 	function loadDisqusCounter(links, query, i) {
 		
@@ -110,6 +104,26 @@
 		
 		$("body").append("<script src='http://disqus.com/forums/azoff/get_num_replies.js" + query + "'></script>");
 		
-	};
+	}
 	
-})(window);
+	function loadTips() {
+	    $('.tip').qtip({
+ 			prerender: true,
+ 			solo: true,
+ 			position: {
+ 				my: 'bottom center',
+ 				at: 'top center',
+ 				target: 'event'
+ 			},
+ 			show: {
+ 				effect: function(offset) {
+ 					$(this).fadeIn(200);
+ 				}
+ 			},
+ 			style: {
+ 				classes: 'ui-tooltip-jtools'
+ 			}
+ 		});
+	}
+	
+})(window, jQuery);

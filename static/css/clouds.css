@@ -1,4 +1,4 @@
 .cloud { display: block; position: absolute; border: 0; }
-.cloud.small { top: 10px; left: -700px; z-index: 90; }
-.cloud.medium { top: 290px; left: -700px; z-index: 90; }
-.cloud.large { top: 40px; left: -500px; z-index: 92; }
+.cloud.small { top: 10px; left: -160px; z-index: 90; }
+.cloud.medium { top: 290px; left: -280px; z-index: 90; }
+.cloud.large { top: 40px; left: -400px; z-index: 92; }
