@@ -1,7 +1,7 @@
 body { background: #FFF url('/static/img/about-bg.jpg') no-repeat fixed bottom left; }
 .content { margin: 3em 3em 0 20em; padding-bottom: 2em; }
-.content h1 { font-size: 5em; padding-bottom: 1em; }
-.content h2 { font-size: 1.8em; padding-left: 1em }
-.content p { font-size: 1em; padding: 1em 3em; line-height: 1.6em; text-indent: 2em; }
+.content h1 { font-size: 8em; line-height: 1; margin: 0; padding: 0.2em 0 0.8em; }
+.content h2 { font-size: 1.8em; padding-left: 1em; margin: 0.5em 0; }
+.content p { font-size: 1em; padding: 1em 3em; line-height: 1.6em; text-indent: 2em; margin: 0; }
 .content a { text-decoration: none; }
 .content a:hover { text-decoration: underline; }

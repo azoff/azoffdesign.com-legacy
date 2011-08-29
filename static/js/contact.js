@@ -64,4 +64,6 @@ $(function(){
 		
 	});
 	
+	$('#body').autoResize();
+	
 });

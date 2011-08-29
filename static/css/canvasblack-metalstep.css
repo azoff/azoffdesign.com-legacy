@@ -1,11 +1,11 @@
-body { background: transparent url('/static/img/metalstep-bg.jpg') repeat scroll top left; }
+body { background: transparent url('/static/img/metalstep-bg.jpg') repeat scroll top left; position: absolute; height: 100%; }
 body > iframe { display: none; }
-.content { color: #FFF; background: transparent url('/static/img/canvasblack-bg.jpg') repeat-y scroll center center; min-height: 35em; min-height: 100%; margin-left: 10em; width: 452px; padding: 1em 30px; font-family: "GenevaPlain"; }
+.content { color: #FFF; background: transparent url('/static/img/canvasblack-bg.jpg') repeat-y scroll center center; min-height: 35em; min-height: 100%; margin-left: 10em; width: 452px; padding: 1em 30px 3em; font-family: "GenevaPlain"; }
 .content h1 { font-size: 2.7em; padding: 0.2em 0; margin-bottom: 0.5em; }
 .content #recaptcha_instructions_image { color: white !important; }
 .content .section { padding-bottom: 0.9em; }
 .content label { display: block; padding-bottom: 0.5em; }
-.content input[type='text'],
-.content textarea { width: 442px; border: 0 none; padding: 5px; font-size: 1.2em; font-family: "GenevaPlain"; }
-.content textarea { height: 6em; }
-.content button { padding: 0.5em; font-size: 0.8em; }
+.content #sender,
+.content #body { width: 442px; border: 0 none; padding: 8px 10px; font-size: 1.2em; font-family: "GenevaPlain"; }
+.content #body { height: 4em; resize: none; }
+.content button { padding: 0.5em 0.8em; font-size: 1em; font-weight: bold; margin-left: 0.4em }
