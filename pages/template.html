@@ -29,7 +29,7 @@
 			Copyright © {{ year }} Jonathan Azoff / Azoff Design / All rights reserved
 		</div>
 	</div>
-	<div class="font-geneva ui-widget ui-widget-content ui-corner-top ui-helper-clearfix widgit_content">
+	<div class="font-geneva ui-widget ui-widget-content ui-corner-top ui-helper-clearfix widget_content">
 		<small>Find me hiding on the interwebs</small>
 		<a class="twitter tip" title="Follow me on Twitter!" href="https://twitter.com/intent/follow?screen_name=azoff"></a>
 		<a class="facebook tip" title="Friend me on Facebook!" href="http://www.facebook.com/jazoff"></a>
@@ -41,7 +41,7 @@
 </div>
 
 <div id="navigation" class="ui-priority-secondary widgit ui-helper-clearfix">
-	<ul class="font-geneva ui-widget ui-widget-content ui-corner-bottom ui-helper-clearfix widgit_content">
+	<ul class="font-geneva ui-widget ui-widget-content ui-corner-bottom ui-helper-clearfix widget_content">
 		<li><a href="/">projects</a></li>
 		<li><a href="/resume">resumé</a></li>
 		<li><a href="/about">about</a></li>
@@ -53,13 +53,13 @@
 </div>
 
 <div id="comments" class="ui-priority-secondary widgit">
-	<div id="disqus_thread" class="ui-widget ui-widget-content ui-corner-br widgit_content"></div>
+	<div id="disqus_thread" class="ui-widget ui-widget-content ui-corner-br widget_content"></div>
 	<div class="ui-widget ui-widget-content ui-corner-right widgit_tab">
 		<div class="ui-widget-header ui-corner-right font-playtime-toddies widgit_button">comments</div>
 	</div>
 </div>
 
-{% if not cache  %}
+{% if debug %}
 <script src="/static/js/debug.js"></script>
 {% endif %} 
 

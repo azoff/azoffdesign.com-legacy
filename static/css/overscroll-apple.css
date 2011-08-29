@@ -1,18 +1,18 @@
 #title { width: 1100px; margin: 1em auto 0; }
-#title h1 { font-weight: bold; font-size: 5em; }
+#title h1 { font-weight: bold; font-size: 5em; margin: 0; }
 #title h2 { font-weight: normal; padding: 0 1em; line-height: 1.5em; font-size: 0.8em; }
 #content { margin: 1em auto 0; width: 1135px; position: relative; display: block; }
-#ithing { padding: 30px 41px 96px 42px; width: 710px; height: 424px; background: transparent url('/static/img/ithing.png') no-repeat scroll top right; position: absolute; z-index: 96; left: 0; }
-#source { position: absolute; z-index: 1; width: 300px; margin-top: 0.3em; right: 0; border: solid 1px #CCC; padding: 0 20px; }
+#ithing { padding: 30px 41px 96px 42px; width: 710px; height: 424px; background: transparent url('/static/img/ithing.png') no-repeat scroll top right; position: absolute; z-index: 90; left: 0; }
+#source { position: absolute; width: 300px; margin-top: 0.3em; right: 0; border: solid 1px #CCC; padding: 0 20px; z-index: 89; }
 #source .section { margin: 20px 0; padding: 10px 40px 0 0; background: transparent none no-repeat scroll top right; min-height: 48px; }
 #source #download { background-image: url('/static/img/package-closed.png'); }
 #source #include { background-image: url('/static/img/package-opened.png'); }
 #source #run { background-image: url('/static/img/package-run.png'); }
-#source h5 { font-weight: normal; font-size: 1.2em; padding-bottom: 0.2em; color: #444; }
+#source h5 { font-weight: normal; font-size: 1.2em; padding-bottom: 0.2em; color: #444; margin: 0 }
 #source .directions { font-size: 0.8em; color: #333; line-height: 1.2em; }
 #screen { overflow: hidden; height: 424px; width: 710px; }
 #overlay { position: absolute; height: 424px; width: 712px; background-color: #000; color: #FFF; opacity: .85; filter:Alpha(Opacity=85); margin: -424px 0 0 -1px; z-index: 3; display: none; }
 #overlay h3 { font-size: 4em; font-weight: bold; text-align: center; margin-top: 180px; }
 #overlay h4 { font-size: 1em; font-weight: normal; text-align: center; margin-top: 10px; }
 #screen img { display: block; }
-.gist { width: 250px; }
+.gist { width: 17em; }

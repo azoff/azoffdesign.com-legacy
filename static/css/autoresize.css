@@ -1,0 +1,11 @@
+body { background-color: #2A2A2A; color: #EEE; }
+#content { width: 500px; margin: 0 auto; }
+h1 { margin: 0.5em 0 0.3em; line-height: 1; font-size: 2.5em; }
+h2 { margin: 0.8em 0; line-height: 1.2; font-size: 1.5em; }
+textarea { margin: 0 0 1em; padding: 8px 10px; border: none 0; font-size: 12px; line-height: 1.2; color: #444; background-color: #EEE; display: block; resize: none; width: 480px; -webkit-border-radius:  0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px; }
+textarea::-webkit-input-placeholder { color: #999; }
+textarea:-moz-placeholder { color: #999; }
+p { line-height: 1.3; margin: 0; min-height: 50px }
+a, a:visited { text-decoration: none; color: #0056FF; }
+a:hover { color: #00B9FF; }
+.gist { background-color: #EEE; -webkit-border-radius: 5px 5px 0 0; -moz-border-radius:  5px 5px 0 0; border-radius:  5px 5px 0 0; }

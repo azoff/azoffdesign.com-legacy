@@ -13,7 +13,7 @@ class PageRequestHandler(webapp.RequestHandler):
 
 	model = Pages.getPage(url)
 	
-	if not model["cache"] or ("source" not in model):
+	if model["debug"] or ("source" not in model):
 		
 		model["source"] = template.render(model["path"], model)
 

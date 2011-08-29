@@ -1,18 +1,18 @@
 body { background: transparent url('/static/img/dirt-bg.jpg') repeat scroll top left; }
 #sky { background: #b9daff url('/static/img/sky-bg.jpg') repeat-x scroll top left; min-height: 500px; min-width: 73em; }
-#sky h1 { padding: 0.5em 0 0.1em 0.5em; font-size: 10em; width: 5.7em; position: absolute; z-index: 91; }
+#sky h1 { padding: 0 0 0 0.5em; font-size: 10em; line-height: 0.7; width: 5.7em; position: absolute; z-index: 91; }
 #sky h2 { margin: 12.4em 0 0 23.5em; font-size: 1.5em; width: 22.5em; color: #222; position: absolute; z-index: 90; }
 #sky h2 a { color: #222; text-decoration: none; }
 #sky h2 a:hover { border-bottom: solid 0.2em #222; }
 #projects { padding: 0 1.5em 1em; width: 69.5em; margin: 0 auto; }
 #projects li { padding-bottom: 2em; }
-#projects li h3 { float: left; display: block; font-size: 1.6em; padding: 0.5em 0 0; }
+#projects li h3 { float: left; display: block; font-size: 1.55em; padding: 0; margin: 0 }
 #projects li h3 a { text-decoration: none; color: #8cd500; } 
 #projects li h3 a:hover { color: #FFF; } 
-#projects li span { float: left; display: block; color: #FFF; font-size: 1.2em; padding: 0.5em 0 0; width: 35em; line-height: 1.2em; }
+#projects li span { float: left; display: block; color: #FFF; font-size: 1.2em; padding: 0.5em 0 0; width: 34em; line-height: 1.2em; }
 #projects li span a { text-decoration: none; color: #8cd500; }
 #projects li span a:hover { color: #FFF }
-#projects li div { float: right; border: solid 0.1em #000; background-color: #FFF; padding: 1em; }
+#projects li div { margin-left: 1em; float: right; border: solid 0.1em #000; background-color: #FFF; padding: 1em; }
 #projects li div a { display: block; width: 300px; height: 160px; background: #FFF none no-repeat scroll top left; border: solid 2em #000; }
 #projects li div a:hover { border-color: #8cd500; }
 #grass { background: transparent url('/static/img/grass-horizontal.png') repeat-x scroll top left; height: 105px; min-width: 73em; margin-top: -105px; }

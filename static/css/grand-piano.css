@@ -3,7 +3,7 @@ body { background: #FFF url('/static/img/piano-bg.jpg') no-repeat scroll top lef
 .demo strong { margin-bottom: 0.6em; display: block; }
 .demo #piano { background-color: #222; border: solid 5px #000; }
 .content { position: relative; margin-left: 32em; width: 37em; margin-bottom: 5em; }
-.content h1 { font-size: 4em; color: #222; text-transform: uppercase; }
+.content h1 { font-size: 4em; color: #222; text-transform: uppercase; margin: 0 }
 .content h2 { font-size: 3em; color: #222; text-transform: uppercase; margin: 0 0 0.2em 0.3em; }
 .content h3 { font-size: 2em; color: #222; margin: 0 0 0.2em 0.4em; font-family: monospace; }
 .content dl { margin: 0.5em 1em; }

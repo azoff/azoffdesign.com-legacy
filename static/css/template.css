@@ -1,4 +1,4 @@
-body { position: absolute; width: 100%; height: 100%; overflow: auto; }
+body { padding-bottom: 3em; } 
 
 .hidden { display: none; }
 
@@ -6,7 +6,7 @@ body { position: absolute; width: 100%; height: 100%; overflow: auto; }
 
 .ui-dialog-titlebar { font-family: "PlaytimeWithHotToddiesRegular"; }
 .ui-dialog-content img { float: left; }
-.ui-dialog-content div { float: right; width: 90%; font-size: 0.8em; line-height: 1.2em; }
+.ui-dialog-content div { float: right; width: 90%; font-size: 0.6em 0.8em; line-height: 1.2em; }
 .ui-dialog-buttonpane { padding: 0 !important; }
 .ui-dialog-buttonpane .ui-button { font-size: 0.6em; font-family: "GenevaPlain"; padding: 0.2em !important; }
 
@@ -14,37 +14,38 @@ body { position: absolute; width: 100%; height: 100%; overflow: auto; }
 .widgit.open { z-index: 99; } 
 .widgit_tab { cursor: pointer; padding: 0.2em; }
 .widgit_button { padding: 0.3em 0.5em 0.4em; font-weight: normal; }
-.widgit_content { padding: 1em; }
+.widget_content { padding: 1em; }
 
 #overlay { position: fixed; z-index: 98; }
 
 #comments {  left: -2px; top: 0; }
 #comments .widgit_tab {  float: left; padding-left: 0; border-left: 0 none; margin: 1em 0 0 -1px; }
-#comments .widgit_content { float: left; width: 21em; margin-left: -23em; }
-#comments.open .widgit_content { margin-left: 0em; height: 24em; overflow: auto; }
+#comments .widget_content { float: left; width: 21em; margin-left: -23em; }
+#comments.open .widget_content { margin-left: 0em; height: 24em; overflow: auto; }
 
-#navigation {  right: 1em; top: -2px; }
+#navigation { right: 1em; top: -2px; }
 #navigation .widgit_tab { float: right; clear: both; padding-top: 0; border-top: 0 none; margin: -1px 1em 0 0; }
-#navigation .widgit_content { float: right; margin-top: -3em; }
-#navigation .widgit_content li { float: left; padding-left: 1em; }
-#navigation .widgit_content li:first-child { padding-left: 0; }
-#navigation .widgit_content a { text-decoration: none; padding: 0 0.2em; }
-#navigation .widgit_content a:hover { color: #666; }
-#navigation.open .widgit_content { margin-top: 0em; }
+#navigation .widget_content { float: right; margin: -3em 0 0; list-style: none; padding: 0.8em }
+#navigation .widget_content li { float: left; padding-left: 1em; }
+#navigation .widget_content li:first-child { padding-left: 0; }
+#navigation .widget_content a, 
+#navigation .widget_content a:visited { color: #000; text-decoration: none; padding: 0 0.2em; }
+#navigation .widget_content a:hover { color: #666; }
+#navigation.open .widget_content { margin-top: 0em; }
 
 #copyright {  bottom: -2px; width: 100%; margin-bottom: -5.3em; z-index: 97; }
 #copyright.open { margin-bottom: 0em; }
 #copyright .widgit_tab { padding-bottom: 0; border-bottom: 0 none; margin: 0 auto -1px auto; width: 30em; text-align: center; }
-#copyright .widgit_content { margin: 0 auto; height: 2.8em; background-color: #FFF; width: 54em; }
-#copyright .widgit_content small { font-size: 1em; line-height: 2.8em; float: left; display: block; margin-right: 1.5em; }
+#copyright .widget_content { margin: 0 auto; height: 2.8em; background-color: #FFF; width: 54em; }
+#copyright .widget_content small { font-size: 1em; line-height: 2.8em; float: left; display: block; margin-right: 1.5em; }
 #copyright .tip { display: block; width: 48px; height: 48px; background: none transparent center center no-repeat scroll; float: left; margin-right: 1.5em; }
 #copyright .twitter.tip { background-image: url("/static/img/twitter-webtreatsetc.png"); }
 #copyright .facebook.tip { background-image: url("/static/img/facebook-logo-webtreatsetc.png"); }
 #copyright .linkedin.tip { background-image: url("/static/img/linkedin-logo-webtreatsetc.png"); }
 #copyright .youtube.tip { background-image: url("/static/img/you-tube1-webtreatsetc.png"); }
 #copyright .job.tip { background-image: url("/static/img/rentjuice.png"); width: 150px; height: 75px; margin: -0.8em 0 0; background-position: top center; }
-#copyright .widgit_content a { font-weight: bold; text-decoration: none; }
-#copyright .widgit_content a:hover { color: #555; }
+#copyright .widget_content a { font-weight: bold; text-decoration: none; }
+#copyright .widget_content a:hover { color: #555; }
 
 .gist .gist-file,
 .gist .gist-file .gist-data { border: 0 none !important; margin: 0 !important; }
