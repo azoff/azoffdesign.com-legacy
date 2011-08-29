@@ -18,3 +18,8 @@ handlers:
     
 - url: .*
   script: src/main.py
+
+error_handlers:
+- file: pages/error.html
+- error_code: over_quota
+  file: pages/quota.html
