@@ -11,7 +11,7 @@ body { margin-bottom: 3em; }
 .ui-dialog-buttonpane .ui-button { font-size: 0.6em; font-family: "GenevaPlain"; padding: 0.2em !important; }
 
 .widgit { position: fixed; z-index: 95; }
-.widgit.open { z-index: 99; } 
+.widgit.open { z-index: 99; opacity: 1 !important; filter:opacity(100) !important } 
 .widgit_tab { cursor: pointer; padding: 0.2em; }
 .widgit_button { padding: 0.3em 0.5em 0.4em; font-weight: normal; }
 .widget_content { padding: 1em; }
