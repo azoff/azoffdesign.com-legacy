@@ -1,5 +1,5 @@
 /**@license
- * Overscroll v1.4.8
+ * Overscroll v1.4.9
  *  A jQuery Plugin that emulates the iPhone scrolling experience in a browser.
  *  http://azoffdesign.com/overscroll
  *
@@ -11,18 +11,18 @@
  *  http://jquery.org/license
  *
  * For API documentation, see the README file
- *  https://github.com/azoff/Overscroll/blob/master/README.md
+ *  http://azof.fr/pYCzuM
  *
- * Date: Sunday, September 25th 2011
+ * Date: Tuesday, October 10th 2011
  */
 
 /*jslint onevar: true, strict: true */
 
 /*global window, jQuery */
 
-"use strict";
-
 (function (w, m, $, o) {
+    
+    "use strict";
 
     // adds overscroll from a jQuery object
     o = $.fn.overscroll = function (options) {
@@ -76,13 +76,15 @@
         init: function (target, options) {
 
             var data = {
-                sizing: o.getSizing(target)
+                sizing: o.getSizing(target),
+                flags: {}, cleaned: {}
             };
 
-            options = $.extend({
+            data.options = options = $.extend({
                 showThumbs: true,
+                persistThumbs: false,
                 wheelDirection: 'vertical',
-                cursor: 'move',
+                cursor: w.opera ? 'move' : 'all-scroll',
                 wheelDelta: o.constants.wheelDelta,
                 scrollDelta: o.constants.scrollDelta,
                 direction: 'multi',
@@ -101,7 +103,7 @@
             target.removeOverscroll();
             target.data(o.removerKey, o.remover(target, data));
 
-            target.css({
+            data.target = target.css({
                 position: 'relative',
                 overflow: 'hidden',
                 cursor: options.cursor
@@ -115,19 +117,18 @@
                 data.thumbs = {};
 
                 if (data.sizing.container.scrollWidth > 0 && options.direction !== 'vertical') {
-                    data.thumbs.horizontal = $(o.div).css(o.getThumbCss(data.sizing.thumbs.horizontal)).fadeTo(0, 0);
+                    data.thumbs.horizontal = $(o.div).css(o.getThumbCss(data.sizing.thumbs.horizontal))
+                                .css({ opacity: options.persistThumbs ? o.constants.thumbOpacity : 0 });
                     target.prepend(data.thumbs.horizontal);
                 }
 
                 if (data.sizing.container.scrollHeight > 0 && options.direction !== 'horizontal') {
-                    data.thumbs.vertical = $(o.div).css(o.getThumbCss(data.sizing.thumbs.vertical)).fadeTo(0, 0);
+                    data.thumbs.vertical = $(o.div).css(o.getThumbCss(data.sizing.thumbs.vertical))
+                                .css({ opacity: options.persistThumbs ? o.constants.thumbOpacity : 0 });
                     target.prepend(data.thumbs.vertical);
                 }
 
             }
-
-            data.target = target;
-            data.options = options;
             
             // if scroll offsets are defined, apply them here
             if (options.scrollLeft) {
@@ -136,15 +137,17 @@
             if (options.scrollTop) {
                 target.scrollTop(options.scrollTop);
             }
+            
+            o.moveThumbs(data, target.scrollLeft(), target.scrollTop());
 
         },
 
         remover: function (target, data) {
             return function () {
-                target.css({
-                    overflow: 'auto',
-                    cursor: 'default'
-                }).unbind(o.events.wheel, o.wheel)
+                target
+                  .removeAttr('style')
+                  .removeData(o.removerKey)
+                  .unbind(o.events.wheel, o.wheel)
                   .unbind(o.events.start, data, o.start)
                   .unbind(o.events.end, data, o.stop)
                   .unbind(o.events.ignored, false);
@@ -160,12 +163,12 @@
         },
 
         triggerEvent: function (event, data) {
-            data.target.trigger('overscroll:' + event);
+            //data.target.trigger('overscroll:' + event);
         },
 
         // toggles the drag mode of the target
         toggleThumbs: function (data, dragging) {
-            if (data.thumbs) {
+            if (data.thumbs && !data.options.persistThumbs) {
                 if (dragging) {
                     if (data.thumbs.vertical) {
                         data.thumbs.vertical.stop(true, true).fadeTo("fast", o.constants.thumbOpacity);
@@ -196,7 +199,11 @@
         // handles mouse wheel scroll events
         wheel: function (event, delta) {
 
-            o.clearInterval(event.data.target);
+            var data = event.data;
+
+            event.preventDefault();
+
+            o.clearInterval(data.target);
 
             if (event.wheelDelta) {
                 delta = event.wheelDelta / (w.opera ? - 120 : 120);
@@ -206,43 +213,41 @@
                 delta = -event.detail / 3;
             }
 
-            if (!event.data.wheelCapture) {
-                event.data.wheelCapture = {
-                    timeout: null
-                };
-                o.toggleThumbs(event.data, true);
-                event.data.target.stop(true, true).data('dragging', true);
+            if (!data.wheelCapture) {
+                data.wheelCapture = { timeout: null };
+                o.toggleThumbs(data, true);
+                data.target.stop(true, data.flags.dragging = true);
             }
 
-            delta *= event.data.options.wheelDelta;
+            delta *= data.options.wheelDelta;
 
-            if (event.data.options.wheelDirection === 'horizontal') {
+            if (data.options.wheelDirection === 'horizontal') {
                 this.scrollLeft -= delta;
             } else {
                 this.scrollTop -= delta;
             }
 
-            o.moveThumbs(event, this.scrollLeft, this.scrollTop);
+            o.moveThumbs(data, this.scrollLeft, this.scrollTop);
 
-            if (event.data.wheelCapture.timeout) {
-                clearTimeout(event.data.wheelCapture.timeout);
+            if (data.wheelCapture.timeout) {
+                w.clearTimeout(data.wheelCapture.timeout);
             }
 
-            event.data.wheelCapture.timeout = setTimeout(function (d) {
-                event.data.wheelCapture = undefined;
-                o.toggleThumbs(event.data, false);
-                event.data.target.data('dragging', false);
+            data.wheelCapture.timeout = w.setTimeout(function (d) {
+                o.toggleThumbs(data, data.wheelCapture = data.flags.dragging = null);
             }, o.constants.timeout);
 
         },
 
         // handles a scroll event
-        moveThumbs: function (event, left, top, thumbs, sizing, ml, mt) {
+        moveThumbs: function (data, left, top) {
 
-            if (event.data.options.showThumbs) {
+            var thumbs, sizing, ml, mt;
 
-                thumbs = event.data.thumbs;
-                sizing = event.data.sizing;
+            if (data.options.showThumbs) {
+
+                thumbs = data.thumbs;
+                sizing = data.sizing;
 
                 if (thumbs.horizontal) {
                     ml = left * (1 + sizing.container.width / sizing.container.scrollWidth);
@@ -262,47 +267,52 @@
 
         // starts the drag operation and binds the mouse move handler
         start: function (event) {
+            
+            var data = event.data, target = data.target, flags = data.flags;
 
-            o.clearInterval(event.data.target);
+            o.clearInterval(data.target);
 
-            event.data.startTarget = $(event.target);
+            data.startTarget = $(event.target);
 
-            if (!event.data.startTarget.is(event.data.options.cancelOn)) {
+            if (!data.startTarget.is(data.options.cancelOn)) {
                 o.normalizeEvent(event);
-                event.data.target.bind(o.events.drag, event.data, o.drag).stop(true, true).data('dragging', false).data('dragged', false);
-                event.data.position = o.setPosition(event, {});
-                event.data.capture = o.setPosition(event, {}, 2);
-                o.triggerEvent('dragstart', event.data);
+                flags.dragging = flags.dragged = false;
+                target.bind(o.events.drag, data, o.drag).stop(true, true);
+                data.position = o.setPosition(event, {});
+                data.capture = o.setPosition(event, {}, 2);
+                o.triggerEvent('dragstart', data);
             }
 
         },
 
         // updates the current scroll location during a mouse move
-        drag: function (event, ml, mt, left, top) {
+        drag: function (event) {
+
+            var data = event.data, flags = data.flags;
 
             o.normalizeEvent(event);
 
-            event.data.target.data('dragged', true);
+            if (!flags.dragged) {
+                o.toggleThumbs(data, true);
+            }
+            
+            flags.dragged = true;            
 
-            if (!event.data.target.data('dragging')) {
-                o.toggleThumbs(event.data, true);
+            if (data.options.direction !== 'vertical') {
+                this.scrollLeft -= (event.pageX - data.position.x);
             }
 
-            if (event.data.options.direction !== 'vertical') {
-                this.scrollLeft -= (event.pageX - event.data.position.x);
+            if (data.options.direction !== 'horizontal') {
+                this.scrollTop -= (event.pageY - data.position.y);
             }
 
-            if (event.data.options.direction !== 'horizontal') {
-                this.scrollTop -= (event.pageY - event.data.position.y);
-            }
+            o.moveThumbs(data, this.scrollLeft, this.scrollTop);
 
-            o.moveThumbs(event, this.scrollLeft, this.scrollTop);
+            o.setPosition(event, data.position);
 
-            o.setPosition(event, event.data.position);
-
-            if (--event.data.capture.index <= 0) {
-                event.data.target.data('dragging', true);
-                o.setPosition(event, event.data.capture, o.constants.captureThreshold);
+            if (--data.capture.index <= 0) {
+                flags.dragging = true;
+                o.setPosition(event, data.capture, o.constants.captureThreshold);
             }
 
         },
@@ -335,32 +345,32 @@
         },
 
         // ends the drag operation and unbinds the mouse move handler
-        stop: function (event, dx, dy, d) {
+        stop: function (event) {
 
-            if (event.data.position) {
+            var data = event.data, target = data.target, flags = data.flags;
 
-                event.data.target.unbind(o.events.drag, o.drag);
+            if (data.position) {
 
-                o.triggerEvent('dragend', event.data);
+                target.unbind(o.events.drag, o.drag);
 
-                if (event.data.target.data('dragging')) {
-                    o.drift(this, event, function (data) {
-                        data.target.data('dragging', false);
-                        o.toggleThumbs(data, false);
+                o.triggerEvent('dragend', data);
+
+                if (flags.dragging) {
+                    o.drift(this, event, function () {                        
+                        o.toggleThumbs(data, flags.dragging = false);
                     });
                 } else {
-                    o.toggleThumbs(event.data, false);
+                    o.toggleThumbs(data, false);
                 }
 
                 // only if we moved, and the mouse down is the same as
                 // the mouse up target do we defer the event
-                if (event.data.target.data('dragged') && $(event.target).is(event.data.startTarget)) {
-                    event.data.target.data('dragged', false);
-                    o.deferClick(event.data.startTarget);
-                    event.data.startTarget = null;
+                if (flags.dragged && $(event.target).is(data.startTarget)) {
+                    o.deferClick(data.startTarget);
+                    data.startTarget = flags.dragged = null;
                 }
 
-                event.data.capture = event.data.position = undefined;
+                data.capture = data.position = undefined;
 
             }
 
@@ -383,26 +393,27 @@
         // sends the overscrolled element into a drift
         drift: function (target, event, callback) {
 
+            var data = event.data, dx, dy, xMod, yMod,
+                scrollLeft = target.scrollLeft, scrollTop = target.scrollTop, 
+                decay = o.constants.driftDecay;
+
             // only drift on intended drifts
-            if ((o.time() - event.data.capture.time) > o.constants.driftTimeout) {
-                return callback.call(null, event.data);
+            if ((o.time() - data.capture.time) > o.constants.driftTimeout) {
+                return callback.call(null, data);
             }
 
             o.normalizeEvent(event);
             
-            var dx = event.data.options.scrollDelta * (event.pageX - event.data.capture.x),
-                dy = event.data.options.scrollDelta * (event.pageY - event.data.capture.y),
-                scrollLeft = target.scrollLeft,
-                scrollTop = target.scrollTop,
-                xMod = dx / o.constants.driftSequences,
-                yMod = dy / o.constants.driftSequences,
-                decay = o.constants.driftDecay;
+            dx = data.options.scrollDelta * (event.pageX - data.capture.x);
+            dy = data.options.scrollDelta * (event.pageY - data.capture.y);
+            xMod = dx / o.constants.driftSequences;
+            yMod = dy / o.constants.driftSequences;
 
-            if (event.data.options.direction !== 'vertical') {
+            if (data.options.direction !== 'vertical') {
                 scrollLeft -= dx;
             }
 
-            if (event.data.options.direction !== 'horizontal') {
+            if (data.options.direction !== 'horizontal') {
                 scrollTop -= dy;
             }
 
@@ -410,9 +421,7 @@
 
             o.setInterval(target, w.setInterval(function () {
 
-                var done = true,
-                    min = 1,
-                    max = -1;
+                var done = true, min = 1, max = -1;
 
                 if (yMod > min && target.scrollTop > scrollTop || yMod < max && target.scrollTop < scrollTop) {
                     done = false;
@@ -426,12 +435,12 @@
                     xMod /= decay;
                 }
 
-                o.moveThumbs(event, target.scrollLeft, target.scrollTop);
+                o.moveThumbs(data, target.scrollLeft, target.scrollTop);
 
                 if (done) {
                     o.clearInterval(target);
-                    o.triggerEvent('driftend', event.data);
-                    callback.call(null, event.data);
+                    o.triggerEvent('driftend', data);
+                    callback.call(null, data);
                 }
 
             }, o.constants.driftFrequency));
@@ -439,17 +448,16 @@
         },
 
         // gets sizing for the container and thumbs
-        getSizing: function (container) { var 
-    
-            sizing = {}, 
-            parent = container.get(0),
+        getSizing: function (container) { 
+            
+            var sizing = {}, parent = container.get(0);
             container = sizing.container = {
                 width: container.width(),
                 height: container.height()
             };
 
             container.scrollWidth = container.width >= parent.scrollWidth ? container.width : parent.scrollWidth;
-            container.scrollHeight = container.height >= parent.scrollHeight ? container.height : parent.scrollHeight
+            container.scrollHeight = container.height >= parent.scrollHeight ? container.height : parent.scrollHeight;
 
             sizing.thumbs = {
                 horizontal: {
