@@ -1,5 +1,5 @@
 /**@license
- * Overscroll v1.4.9
+ * Overscroll v1.5.0
  *  A jQuery Plugin that emulates the iPhone scrolling experience in a browser.
  *  http://azoffdesign.com/overscroll
  *
@@ -13,7 +13,7 @@
  * For API documentation, see the README file
  *  http://azof.fr/pYCzuM
  *
- * Date: Tuesday, October 10th 2011
+ * Date: Saturday, November 5th 2011
  */
 
 /*jslint onevar: true, strict: true */
@@ -35,7 +35,7 @@
     // removes overscroll from a jQuery object
     $.fn.removeOverscroll = function (options) {
         return this.each(function () {
-            var remover = $(this).data(o.removerKey);
+            var remover = $(this).data(o.removerKey);            
             if ($.isFunction(remover)) {
                 remover();
             }
@@ -107,10 +107,10 @@
                 position: 'relative',
                 overflow: 'hidden',
                 cursor: options.cursor
-            }).bind(o.events.wheel, data, o.wheel)
-              .bind(o.events.start, data, o.start)
-              .bind(o.events.end, data, o.stop)
-              .bind(o.events.ignored, false);
+            }).on(o.events.wheel, data, o.wheel)
+              .on(o.events.start, data, o.start)
+              .on(o.events.end, data, o.stop)
+              .on(o.events.ignored, false);
               
             if (options.showThumbs) {
 
@@ -147,10 +147,10 @@
                 target
                   .removeAttr('style')
                   .removeData(o.removerKey)
-                  .unbind(o.events.wheel, o.wheel)
-                  .unbind(o.events.start, data, o.start)
-                  .unbind(o.events.end, data, o.stop)
-                  .unbind(o.events.ignored, false);
+                  .off(o.events.wheel, o.wheel)
+                  .off(o.events.start, o.start)
+                  .off(o.events.end, o.stop)
+                  .off(o.events.ignored, false);
                 if (data.thumbs) {
                     if (data.thumbs.horizontal) {
                         data.thumbs.horizontal.remove();
@@ -163,7 +163,7 @@
         },
 
         triggerEvent: function (event, data) {
-            //data.target.trigger('overscroll:' + event);
+            data.target.trigger('overscroll:' + event);
         },
 
         // toggles the drag mode of the target
@@ -197,20 +197,22 @@
         },
 
         // handles mouse wheel scroll events
-        wheel: function (event, delta) {
-
-            var data = event.data;
+        wheel: function (event, delta) { var 
+            
+            data = event.data, 
+            
+            original = event.originalEvent;
 
             event.preventDefault();
 
             o.clearInterval(data.target);
 
-            if (event.wheelDelta) {
-                delta = event.wheelDelta / (w.opera ? - 120 : 120);
+            if (original.wheelDelta) {
+                delta = original.wheelDelta / (w.opera ? - 120 : 120);
             }
 
-            if (event.detail) {
-                delta = -event.detail / 3;
+            if (original.detail) {
+                delta = -original.detail / 3;
             }
 
             if (!data.wheelCapture) {
