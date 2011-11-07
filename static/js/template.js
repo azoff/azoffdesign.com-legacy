@@ -1,4 +1,4 @@
-(function(w, $){
+(function(w, doc, $){
 	
 	var 
 	overlay,
@@ -27,6 +27,8 @@
 		
 		// bind handlers for any buttons
 		$("button").button();
+		
+		$(doc.body).addClass('domready');
 
 	});
 	
@@ -126,4 +128,4 @@
  		});
 	}
 	
-})(window, jQuery);
+})(window, document, jQuery);
