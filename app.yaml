@@ -12,7 +12,7 @@ handlers:
   static_files: static/misc/robots.txt
   upload: static/.*
   
-- url: /resume/(doc|rtf|pdf)
+- url: /resume/(doc|png|pdf)
   static_files: static/misc/resume.\1
   upload: static/.*
     
