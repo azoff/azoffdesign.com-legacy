@@ -21,56 +21,58 @@
 
 <body>
 
-{{ source }}
+    {{ source }}
 
-<div id="copyright" class="ui-priority-secondary widgit ui-helper-clearfix">
-	<div class="ui-widget ui-widget-content ui-corner-top widgit_tab">
-		<div class="ui-widget-header ui-corner-top font-playtime-toddies widgit_button">
-			Copyright © {{ year }} Jonathan Azoff / Azoff Design / All rights reserved
-		</div>
-	</div>
-	<div class="font-geneva ui-widget ui-widget-content ui-corner-top ui-helper-clearfix widget_content">
-		<small>Find me hiding on the interwebs</small>
-		<a class="twitter tip" title="Follow me on Twitter!" href="https://twitter.com/intent/follow?screen_name=azoff"></a>
-		<a class="facebook tip" title="Friend me on Facebook!" href="http://www.facebook.com/jazoff"></a>
-		<a class="linkedin tip" title="Connect with me on LinkedIn!" href="http://www.linkedin.com/in/jazoff"></a>
-		<a class="youtube tip" title="Watch me on Youtube!" href="http://www.youtube.com/azoff"></a>
-		<small>or, swing by my gig</small>
-		<a class="job tip" title="RentJuice - Rentals Made Easy" href="http://www.rentjuice.com"></a>
-	</div>
-</div>
+    <div id="copyright" class="fouc ui-priority-secondary widgit ui-helper-clearfix">
+    	<div class="ui-widget ui-widget-content ui-corner-top widgit_tab">
+    		<div class="ui-widget-header ui-corner-top font-playtime-toddies widgit_button">
+    			Copyright © {{ year }} Jonathan Azoff / Azoff Design / All rights reserved
+    		</div>
+    	</div>
+    	<div class="font-geneva ui-widget ui-widget-content ui-corner-top ui-helper-clearfix widget_content">
+    		<small>Find me hiding on the interwebs</small>
+    		<a class="twitter tip" title="Follow me on Twitter!" href="https://twitter.com/intent/follow?screen_name=azoff"></a>
+    		<a class="facebook tip" title="Friend me on Facebook!" href="http://www.facebook.com/jazoff"></a>
+    		<a class="linkedin tip" title="Connect with me on LinkedIn!" href="http://www.linkedin.com/in/jazoff"></a>
+    		<a class="youtube tip" title="Watch me on Youtube!" href="http://www.youtube.com/azoff"></a>
+    		<small>or, swing by my gig</small>
+    		<a class="job tip" title="RentJuice - Rentals Made Easy" href="http://www.rentjuice.com"></a>
+    	</div>
+    </div>
 
-<div id="navigation" class="ui-priority-secondary widgit ui-helper-clearfix">
-	<ul class="font-geneva ui-widget ui-widget-content ui-corner-bottom ui-helper-clearfix widget_content">
-		<li><a href="/">projects</a></li>
-		<li><a href="/resume">resumé</a></li>
-		<li><a href="/about">about</a></li>
-		<li><a href="/contact">contact</a></li>
-	</ul>
-	<div class="ui-widget ui-widget-content ui-corner-bottom widgit_tab">
-		<div class="ui-widget-header ui-corner-bottom font-playtime-toddies widgit_button">navigation</div>
-	</div>
-</div>
+    <div id="navigation" class="fouc ui-priority-secondary widgit ui-helper-clearfix">
+    	<ul class="font-geneva ui-widget ui-widget-content ui-corner-bottom ui-helper-clearfix widget_content">
+    		<li><a href="/">projects</a></li>
+    		<li><a href="/resume">resumé</a></li>
+    		<li><a href="/about">about</a></li>
+    		<li><a href="/contact">contact</a></li>
+    	</ul>
+    	<div class="ui-widget ui-widget-content ui-corner-bottom widgit_tab">
+    		<div class="ui-widget-header ui-corner-bottom font-playtime-toddies widgit_button">navigation</div>
+    	</div>
+    </div>
 
-<div id="comments" class="ui-priority-secondary widgit">
-	<div id="disqus_thread" class="ui-widget ui-widget-content ui-corner-br widget_content"></div>
-	<div class="ui-widget ui-widget-content ui-corner-right widgit_tab">
-		<div class="ui-widget-header ui-corner-right font-playtime-toddies widgit_button">comments</div>
-	</div>
-</div>
+    <div id="comments" class="fouc ui-priority-secondary widgit">
+    	<div id="disqus_thread" class="ui-widget ui-widget-content ui-corner-br widget_content"></div>
+    	<div class="ui-widget ui-widget-content ui-corner-right widgit_tab">
+    		<div class="ui-widget-header ui-corner-right font-playtime-toddies widgit_button">comments</div>
+    	</div>
+    </div>
 
-{% if debug %}
-<script src="/static/js/debug.js"></script>
-{% endif %} 
+    {% if debug %}
+    <script src="/static/js/debug.js"></script>
+    {% endif %} 
 
-<script>
-	yepnope([
-		{% for script in scripts %}
-		"/static/js/{{ script }}",
-		{% endfor %}
-		"http://azoff.disqus.com/embed.js"
-	]);
-</script>
+    <script>
+    	yepnope([
+    		{% for script in scripts %}
+    		"/static/js/{{ script }}",
+    		{% endfor %}
+    		"http://azoff.disqus.com/embed.js"
+    	]);
+    </script>
+
+    <div id="preloader" class="ui-widget ui-widget-content widgit_tab ui-widget-header ui-corner-bottom"><span></span></div>
 
 </body>
 
