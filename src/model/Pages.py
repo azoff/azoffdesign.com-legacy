@@ -32,9 +32,10 @@ def _getSummary(description):
 for page in _parser.sections():
 
 	if _keyExists(page, "source"):
+		source 				= _parser.get(page, "source")
 		page 				= page.strip().lower() if page else ""
 		model 				= {}
-		model["path"]		= path.join(path.join(ROOT, "pages"), _parser.get(page, "source"))
+		model["path"]		= source if source.startswith("http") else path.join(path.join(ROOT, "pages"), source)
 		model["keywords"] 	= ("%s,%s" % (KEYWORDS, _parser.get(page, "keywords"))) if _keyExists(page, "keywords") else KEYWORDS
 		model["scripts"] 	= ("%s,%s" % (SCRIPTS, _parser.get(page, "scripts").replace(" ", ""))) if _keyExists(page, "scripts") else SCRIPTS
 		model["styles"] 	= ("%s,%s" % (STYLES, _parser.get(page, "styles").replace(" ", ""))) if _keyExists(page, "styles") else STYLES

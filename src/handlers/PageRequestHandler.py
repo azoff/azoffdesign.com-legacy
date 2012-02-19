@@ -12,12 +12,21 @@ class PageRequestHandler(webapp.RequestHandler):
   def get(self, url):
 
 	model = Pages.getPage(url)
+	path = model["path"];
 	
-	if model["debug"] or ("source" not in model):
+	if path.startswith('http'):
 		
-		model["source"] = template.render(model["path"], model)
-
-	self.response.out.write(template.render(TEMPLATE_PATH, model))
+		self.response.headers["Location"] = path
+		
+		self.response.set_status(301);
+		
+	else:
+		
+		if model["debug"] or ("source" not in model):
+			
+			model["source"] = template.render(path, model)
+			
+		self.response.out.write(template.render(TEMPLATE_PATH, model))
 	
   def post(self, url):
 	
