@@ -6,7 +6,7 @@ ul { padding: 0; }
     -moz-box-shadow:    -20px 0 20px -20px rgba(0,0,0,0.65) inset;
     box-shadow:         -20px 0 20px -20px rgba(0,0,0,0.65) inset;
 }
-#work h1 { font-size: 5em; padding: 0.5em 0 0.2em; margin: 0 }
+#work h1 { font-size: 5em; padding: 0.5em 0 0.2em; margin: 0; line-height: 1.1; }
 #work small, #resume small { font-size: 1.7em; line-height: 1.2em; color: #111/static/img; padding-bottom: 1em; display: block; }
 #work .selected li { display: none; list-style: none; }
 #work .selected li.active { display: block; }
@@ -38,4 +38,4 @@ ul { padding: 0; }
 #resume .file.pdf { background-image: url('/static/img/pdf.png'); }
 #status { width: 300px; height: 271px; padding-top: 40px; text-align: center; background: transparent url('/static/img/postit.png') no-repeat scroll top left; float: left;  }
 #status h1 { font-size: 1.8em; font-weight: bold; margin: 0 0 0.3em; }
-#status samp { font-size: 1.9em; display: block; line-height: 1.2em; margin-bottom: 0.2em; }
+#status samp { font-size: 1.9em; display: block; line-height: 1.1em; margin-bottom: 0.2em; }
