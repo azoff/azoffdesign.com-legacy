@@ -43,9 +43,11 @@ class ContactFormHandler:
 
 					try:
 
-						body = "%s said:\n\n %s" % (sender, body)
-
-						mail.send_mail_to_admins(Defaults.BOT_EMAIL, "Azoff Design - Contact Form Submission", body)
+						mail.send_mail_to_admins(
+							sender   = Defaults.BOT_EMAIL,
+							subject  = "Azoff Design - Contact Form Submission",
+							body     = body,
+							reply_to = sender)
 
 						return StatusMessage(
 							StatusMessage.CODE_OK,
